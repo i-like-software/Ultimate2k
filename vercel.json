@@ -1,0 +1,39 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "buildCommand": null,
+  "outputDirectory": ".",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/comic", "destination": "/", "permanent": false },
+    { "source": "/comic/index", "destination": "/", "permanent": false },
+    { "source": "/comic/index.html", "destination": "/", "permanent": false },
+    { "source": "/comic/about", "destination": "/about", "permanent": false },
+    {
+      "source": "/comic/about.html",
+      "destination": "/about",
+      "permanent": false
+    },
+    {
+      "source": "/comic/services",
+      "destination": "/services",
+      "permanent": false
+    },
+    {
+      "source": "/comic/services.html",
+      "destination": "/services",
+      "permanent": false
+    },
+    {
+      "source": "/comic/contact",
+      "destination": "/contact",
+      "permanent": false
+    },
+    {
+      "source": "/comic/contact.html",
+      "destination": "/contact",
+      "permanent": false
+    }
+  ]
+}

@@ -1,0 +1,264 @@
+.comic-home .site-header {
+  top: 0;
+}
+.comic-landing {
+  min-height: max(790px, 100svh);
+}
+.comic-book-wall {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+  background-image: url("comic-wall.webp");
+  background-size: cover;
+  background-position: center;
+  animation: none !important;
+  transform: none !important;
+  transition: none !important;
+}
+.landing-vignette {
+  background:
+    linear-gradient(#0008, #0009 35%, #0009 70%, #000a),
+    radial-gradient(ellipse at center, #0008, transparent 70%);
+}
+.landing-content {
+  padding-top: 125px;
+}
+.landing-caption {
+  font-size: 9px;
+}
+.landing-description {
+  font-weight: 500;
+}
+.landing-bottom > a > span {
+  animation: none;
+}
+.landing-bottom {
+  bottom: 27px;
+}
+.comic .service-row:last-child {
+  grid-column: auto;
+  min-height: 175px;
+}
+.comic .service-row h3 {
+  font-size: 30px;
+}
+.comic .service-row p {
+  font-size: 13px;
+}
+.comic .service-row > h3 {
+  overflow-wrap: anywhere;
+}
+.approach-note {
+  font-size: 13px;
+  max-width: 650px;
+  margin-top: 40px;
+}
+.company-name {
+  font-size: 11px !important;
+}
+.footer-main > div:last-child > p {
+  font-size: 12px;
+  margin: 0 0 20px;
+}
+.footer-main > div:last-child > a {
+  color: var(--red) !important;
+}
+.comic-home .site-header nav > a[aria-current] {
+  text-decoration: underline;
+}
+.comic-home .site-header nav.open a[aria-current] {
+  color: var(--red);
+}
+.founders-panel {
+  border: 3px solid var(--ink);
+  box-shadow: 9px 9px 0 var(--red);
+  padding: 35px;
+  background-image: radial-gradient(#00000015 0.8px, transparent 0.8px);
+  background-size: 6px 6px;
+  transform: rotate(-1deg);
+}
+.founders-panel > div {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  border-top: 2px solid var(--ink);
+  padding: 20px 0;
+}
+.founders-panel strong {
+  font-family: "Barlow Condensed", Impact, sans-serif;
+  font-size: 100px;
+  line-height: 0.95;
+  color: var(--red);
+}
+.founders-panel > div > span {
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+.founders-panel > p:last-child {
+  border-top: 2px solid var(--ink);
+  font-size: 14px;
+  padding-top: 20px;
+  color: var(--ink);
+}
+.link-grid > article {
+  padding: 35px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.link-grid > article p {
+  margin-top: 16px;
+  font-size: 14px;
+}
+.service-chapters {
+  padding-bottom: 0;
+}
+.service-chapter {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  padding: 50px 0;
+  border-top: 3px solid var(--ink);
+  scroll-margin-top: 35px;
+}
+.service-chapter:last-child {
+  border-bottom: 3px solid var(--ink);
+}
+.comic .service-chapter h2 {
+  font-size: 54px;
+}
+.service-tagline {
+  margin-top: 25px;
+  color: var(--red);
+  font-weight: 600;
+}
+.service-chapter .eyebrow {
+  display: table;
+  border: 2px solid var(--ink);
+  box-shadow: 3px 3px 0 var(--ink);
+  padding: 5px 10px;
+  transform: rotate(-1deg);
+}
+.scope-note {
+  padding: 45px;
+  border: 3px solid var(--ink);
+  box-shadow: 7px 7px 0 var(--red);
+  max-width: 1000px;
+}
+.scope-note p:not(.eyebrow) {
+  margin-top: 25px;
+  max-width: 800px;
+}
+.comic .scope-note h2 {
+  font-size: 52px;
+}
+.partnership {
+  padding-bottom: 65px;
+}
+.partnership .section-head {
+  margin-bottom: 0;
+}
+@media (max-width: 1100px) {
+  .comic .service-row h3 {
+    font-size: 27px;
+  }
+  .service-chapter {
+    gap: 45px;
+  }
+  .comic .service-chapter h2 {
+    font-size: 47px;
+  }
+  .site-header nav {
+    gap: 25px;
+  }
+}
+@media (max-width: 800px) {
+  .comic-book-wall {
+    background-size: auto 100%;
+    background-position: 48% center;
+  }
+  .landing-content {
+    padding-top: 125px;
+  }
+  .comic-landing {
+    min-height: max(790px, 100svh);
+  }
+  .service-chapter {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding-block: 40px;
+  }
+  .comic .service-chapter h2 {
+    font-size: 49px;
+  }
+  .service-chapter .capabilities {
+    margin-block: 22px;
+  }
+  .founders-panel {
+    margin-right: 10px;
+  }
+  .comic .big-word {
+    font-size: 95px;
+  }
+  .scope-note {
+    padding: 30px;
+  }
+  .link-grid > article {
+    padding: 28px;
+  }
+  .footer-main {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 550px) {
+  .comic .service-row:last-child {
+    min-height: 145px;
+  }
+  .comic .service-row h3 {
+    font-size: 29px;
+  }
+  .comic .scope-note h2 {
+    font-size: 43px;
+  }
+  .comic .big-word {
+    font-size: 84px;
+  }
+  .founders-panel {
+    padding: 25px;
+  }
+  .founders-panel strong {
+    font-size: 85px;
+  }
+}
+@media (max-width: 430px) {
+  .landing-content {
+    padding-top: 120px;
+  }
+  .landing-description {
+    font-size: 13px;
+  }
+  .comic .service-chapter h2 {
+    font-size: 44px;
+    overflow-wrap: anywhere;
+  }
+  .comic .big-word {
+    font-size: clamp(65px, 21vw, 84px);
+    padding: 22px;
+  }
+  .founders-panel strong {
+    font-size: 75px;
+  }
+  .founders-panel > div > span {
+    font-size: 12px;
+  }
+  .scope-note {
+    padding: 24px;
+  }
+  .comic .page-intro h1 {
+    font-size: clamp(47px, 15vw, 60px);
+  }
+  .comic .step h3 {
+    font-size: 25px;
+  }
+}
+.landing-description br { display: initial !important; }
