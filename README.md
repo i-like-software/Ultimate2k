@@ -13,7 +13,7 @@ Only pages with meaningful current content are included. Empty team, careers, ne
 
 The landing uses a **stationary**, darkened wall of original illustrated comic-book covers. It has no wall animation, parallax or motion on scroll. Other page effects can be paused and respect reduced-motion preferences.
 
-The wall contains 80 panels with programming-pun titles, a slight blur and a stronger dark crimson tint. Exactly three covers have a restrained, steady glow.
+The wall contains 80 panels with programming-pun titles, a slight blur and a black radial vignette, lighter at the centre and darker at the edges. Exactly ten covers have a restrained, steady glow.
 
 ## Content basis
 
@@ -39,3 +39,5 @@ Edit the four HTML pages directly. Shared styling is in `assets/styles.css`; the
 
 Open `index.html` in a browser to review the current site. The 404 page is a utility page, not part of the navigation.
 
+
+Current landing: covers use a fixed 53:82 portrait ratio, with no stretching. A black radial overlay ranges from a lighter centre to near-black edges. The foreground logo, headline, copy, navigation and controls have restrained soft glows. The wall remains stationary.

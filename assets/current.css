@@ -265,26 +265,33 @@
   display: initial !important;
 }
 
-/* Eighty stationary covers; exactly three receive a quiet emissive edge. */
+/* Fixed portrait cover proportions, black centre-to-edge vignette and ten glows. */
 .comic-book-wall {
   display: grid;
   grid-template-columns: repeat(16, minmax(0, 1fr));
-  grid-template-rows: repeat(5, minmax(0, 1fr));
+  grid-template-rows: none;
+  grid-auto-rows: auto;
   gap: 3px;
-  inset: -3px;
-  background: #10070a;
+  inset: auto;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  width: max(calc(100% + 12px), calc(max(790px, 100svh) * 2.1));
+  height: auto;
+  background: #000;
   background-image: none;
   filter: blur(0.65px);
   isolation: isolate;
 }
 .comic-book {
   position: relative;
+  aspect-ratio: 53 / 82;
   min-width: 0;
   min-height: 0;
   background-image: url("comic-wall.webp");
   background-size: 1000% 400%;
   background-position: var(--cover-x) var(--cover-y);
-  border: 1px solid #17090c;
+  border: 1px solid #111;
   box-shadow: 1px 2px 2px #000;
   overflow: visible;
 }
@@ -332,16 +339,70 @@
 }
 .comic-book.is-glowing {
   z-index: 1;
-  filter: brightness(1.65) saturate(1.15);
+  filter: brightness(1.7) saturate(1.1);
   border-color: #ff3966;
   box-shadow:
     0 0 10px 2px #ff315a,
-    0 0 29px 7px #ff215f80;
+    0 0 27px 6px #ff215f88;
 }
 .landing-vignette {
-  background:
-    linear-gradient(115deg, rgba(28, 0, 12, 0.76), rgba(6, 5, 10, 0.78)),
-    radial-gradient(ellipse at center, rgba(10, 0, 6, 0.2), transparent 80%);
+  background: radial-gradient(
+    ellipse at 50% 48%,
+    rgba(0, 0, 0, 0.54) 0%,
+    rgba(0, 0, 0, 0.64) 26%,
+    rgba(0, 0, 0, 0.87) 60%,
+    rgba(0, 0, 0, 0.985) 100%
+  );
+}
+.landing-brand img {
+  filter: drop-shadow(4px 4px 0 #000) drop-shadow(0 0 17px #ff315a66);
+}
+.landing-caption {
+  box-shadow:
+    4px 4px 0 #000,
+    0 0 20px #ffffff3d;
+}
+.comic-landing h1 {
+  text-shadow:
+    4px 5px 0 #000,
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    0 0 22px #ffffff4d;
+}
+.comic-landing h1 > strong {
+  box-shadow:
+    7px 7px 0 #080808,
+    0 0 27px #ff215f4d;
+}
+.landing-description,
+.landing-contact,
+.landing-bottom {
+  text-shadow:
+    0 0 12px #ffffff66,
+    0 1px 4px #000;
+}
+.comic-landing .button {
+  box-shadow:
+    5px 5px 0 var(--red),
+    0 0 23px #ffffff42;
+}
+.landing-contact {
+  filter: drop-shadow(0 0 7px #ffffff38);
+}
+.landing-bottom > a > span {
+  box-shadow: 0 0 13px #ffffff3d;
+}
+.comic-home .site-header .brand img {
+  filter: drop-shadow(0 0 9px #ff315a66);
+}
+.comic-home .site-header .brand-name,
+.comic-home .site-header nav > a,
+.comic-home .menu-toggle {
+  text-shadow: 0 0 12px #ffffff66;
+}
+.comic-home .motion-toggle {
+  box-shadow: 0 0 16px #ffffff3d;
 }
 @media (max-width: 1100px) {
   .pun-title {
@@ -352,7 +413,8 @@
 @media (max-width: 800px) {
   .comic-book-wall {
     grid-template-columns: repeat(10, minmax(0, 1fr));
-    grid-template-rows: repeat(8, minmax(0, 1fr));
+    grid-template-rows: none;
+    width: max(calc(100% + 12px), calc(max(790px, 100svh) * 0.83));
     background-size: auto;
   }
   .pun-title {
@@ -367,12 +429,13 @@
 @media (max-width: 430px) {
   .comic-book-wall {
     grid-template-columns: repeat(8, minmax(0, 1fr));
-    grid-template-rows: repeat(10, minmax(0, 1fr));
+    grid-template-rows: none;
+    width: max(calc(100% + 12px), calc(max(790px, 100svh) * 0.54));
     filter: blur(0.5px);
     gap: 2px;
   }
   .pun-title {
-    font-size: 7px;
+    font-size: 8px;
     min-height: 20px;
     height: 31%;
     padding: 2px 1px;
@@ -382,5 +445,14 @@
     padding: 1px;
     bottom: 1px;
     left: 1px;
+  }
+  .landing-vignette {
+    background: radial-gradient(
+      ellipse at 50% 47%,
+      rgba(0, 0, 0, 0.54) 0%,
+      rgba(0, 0, 0, 0.67) 32%,
+      rgba(0, 0, 0, 0.9) 72%,
+      rgba(0, 0, 0, 0.985) 100%
+    );
   }
 }
