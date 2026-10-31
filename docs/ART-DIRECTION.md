@@ -4,6 +4,8 @@ Generated with the built-in ImageGen tool on 31 October 2026. Used as a decorati
 
 Project asset: `assets/comic-wall.webp` (web-optimised copy).
 
+Landing refinement: the original artwork is reused as an atlas for 80 stationary cover panels. Each panel has an HTML-rendered programming-pun masthead, so titles remain exact rather than relying on generated lettering. The wall has a stronger dark crimson tint and a slight blur; exactly three panels receive a soft crimson glow. The glow is steady, with no wall motion or parallax.
+
 The full-resolution original is retained separately as `Ultimate2k-comic-wall-original.png` in the local deliverables. Logo design is supplied by the user; its site asset is a web-sized copy.
 
 ## Generation prompt

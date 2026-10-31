@@ -13,6 +13,8 @@ Only pages with meaningful current content are included. Empty team, careers, ne
 
 The landing uses a **stationary**, darkened wall of original illustrated comic-book covers. It has no wall animation, parallax or motion on scroll. Other page effects can be paused and respect reduced-motion preferences.
 
+The wall contains 80 panels with programming-pun titles, a slight blur and a stronger dark crimson tint. Exactly three covers have a restrained, steady glow.
+
 ## Content basis
 
 The user supplied the brand, logo and company name **Ultimate2k (Pty) Ltd.** The requested Software Development Tenders chat supplied a fact-separated handoff: a South African four-person founding team, two software engineers and two business analysts, full-stack/mobile/RAG capabilities and openness to delivery partnerships.

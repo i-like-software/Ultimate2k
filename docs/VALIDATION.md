@@ -1,5 +1,7 @@
 # Validation — 31 October 2026
 
+Latest landing refinement: checked at 320, 390, 768, 1440 and 1906px with no overflow or JavaScript errors. Verified 80 cover panels, exactly three glowing panels, computed blur 0.65px on desktop and no animation or transform over time. Desktop/wide/mobile screenshots inspected; all 116 local HTML references and CSS assets resolve.
+
 - Four content pages checked in Chrome at 320, 390, 768 and 1440px (16 page/viewport checks), with no horizontal overflow or JavaScript errors.
 - Static wall verified over time with normal motion enabled: computed animation `none`, transform `none`, and unchanged background position.
 - Desktop/mobile landing and content screenshots visually inspected.
