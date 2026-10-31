@@ -5,7 +5,7 @@ Vanilla HTML, CSS and JavaScript website. **Deployed on Vercel:** [ultimate2k.ve
 ## Current pages
 
 - `index.html` — Enterprise software solutions, capabilities, founding team and partnership introduction.
-- `services.html` — Web/business applications, mobile development, AI assistants/RAG and API integrations.
+- `services.html` — Web/business applications, mobile development, AI assistants/RAG, API integrations, data engineering and business intelligence.
 - `about.html` — Four-person founding team and the combined engineering/business-analysis approach.
 - `contact.html` — Project or delivery-partnership brief.
 
