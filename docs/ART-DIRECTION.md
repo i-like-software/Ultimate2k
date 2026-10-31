@@ -1,5 +1,8 @@
 # Static comic-cover wall
 
+Current brickwork revision: all covers are uniformly sized, upright and retain the 53:82 portrait ratio. Alternate rows are offset by half a cover. The blur and black vignette were restored to the pre-pile treatment; ten glow covers remain. Removed the four-label homepage strip and the standalone “Looking for an engineering partner?” section. Verified at five widths with no overflow or JavaScript errors; all 115 local HTML references resolve. Earlier pile-specific notes below describe superseded revisions.
+
+
 Current pile treatment: 80 covers flow in staggered columns with varied widths, slight rotations and overlapping paper edges. All retain the portrait cover ratio. Blur is applied only to non-glowing covers; the ten highlighted covers and every parent layer have no blur. The black radial vignette and foreground glows are preserved. Nothing moves or animates.
 
 Generated with the built-in ImageGen tool on 31 October 2026. Used as a decorative background under a dark CSS overlay. It is stationary; no animated columns, pan, zoom or parallax are applied.

@@ -15,7 +15,7 @@ The landing uses a **stationary**, darkened wall of original illustrated comic-b
 
 The wall contains 80 panels with programming-pun titles, a slight blur and a black radial vignette, lighter at the centre and darker at the edges. Exactly ten covers have a restrained, steady glow.
 
-The current arrangement is a loose pile: staggered columns, varied cover sizes, small rotations and overlapping edges. The ten glowing covers remain sharp; only other covers are blurred.
+The current arrangement is uniform, upright brickwork: alternating rows shift by half a cover. The pre-pile blur and black radial vignette are restored. The homepage label strip and standalone engineering-partnership section have been removed.
 
 ## Content basis
 

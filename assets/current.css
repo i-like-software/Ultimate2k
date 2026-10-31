@@ -457,66 +457,63 @@
   }
 }
 
-/* A stationary, loosely layered pile. Blur belongs to individual covers only. */
-.comic-book-wall {
-  display: block;
-  column-count: 16;
-  column-gap: 4px;
-  column-fill: balance;
-  width: max(calc(100% + 170px), calc(max(790px, 100svh) * 2.25));
-  height: auto;
-  filter: none;
-  overflow: visible;
+/* Uniform upright covers in half-cover-offset brickwork rows. */
+.comic-book {
+  transform: none;
+  margin: 0;
+  width: auto;
+  aspect-ratio: 53 / 82;
 }
 .comic-book {
-  display: inline-block;
-  vertical-align: top;
-  break-inside: avoid;
-  page-break-inside: avoid;
-  width: calc(100% * var(--pile-size));
-  aspect-ratio: 53 / 82;
-  margin-left: var(--pile-x);
-  margin-top: var(--pile-gap);
-  margin-bottom: 0;
-  transform: rotate(var(--pile-tilt));
-  transform-origin: 50% 50%;
-  z-index: var(--pile-layer);
-  filter: blur(0.65px);
-  border: 2px solid #171717;
-  box-shadow:
-    3px 5px 2px #000b,
-    1px 1px 0 #c8beab66;
-  isolation: isolate;
+  translate: none;
 }
-.comic-book.is-glowing {
-  z-index: 20;
-  filter: blur(0) brightness(1.7) saturate(1.1);
-  border-color: #ff3966;
-  box-shadow:
-    0 0 10px 2px #ff315a,
-    0 0 27px 6px #ff215f88,
-    4px 6px 3px #000c;
+.comic-book:nth-child(32n + 17),
+.comic-book:nth-child(32n + 18),
+.comic-book:nth-child(32n + 19),
+.comic-book:nth-child(32n + 20),
+.comic-book:nth-child(32n + 21),
+.comic-book:nth-child(32n + 22),
+.comic-book:nth-child(32n + 23),
+.comic-book:nth-child(32n + 24),
+.comic-book:nth-child(32n + 25),
+.comic-book:nth-child(32n + 26),
+.comic-book:nth-child(32n + 27),
+.comic-book:nth-child(32n + 28),
+.comic-book:nth-child(32n + 29),
+.comic-book:nth-child(32n + 30),
+.comic-book:nth-child(32n + 31),
+.comic-book:nth-child(32n + 32) {
+  translate: 50% 0;
 }
 @media (max-width: 800px) {
-  .comic-book-wall {
-    column-count: 10;
-    column-gap: 3px;
-    width: max(calc(100% + 90px), calc(max(790px, 100svh) * 0.92));
-    filter: none;
+  .comic-book {
+    translate: none;
+  }
+  .comic-book:nth-child(20n + 11),
+  .comic-book:nth-child(20n + 12),
+  .comic-book:nth-child(20n + 13),
+  .comic-book:nth-child(20n + 14),
+  .comic-book:nth-child(20n + 15),
+  .comic-book:nth-child(20n + 16),
+  .comic-book:nth-child(20n + 17),
+  .comic-book:nth-child(20n + 18),
+  .comic-book:nth-child(20n + 19),
+  .comic-book:nth-child(20n + 20) {
+    translate: 50% 0;
   }
 }
 @media (max-width: 430px) {
-  .comic-book-wall {
-    column-count: 8;
-    column-gap: 2px;
-    width: max(calc(100% + 64px), calc(max(790px, 100svh) * 0.6));
-    filter: none;
-  }
   .comic-book {
-    filter: blur(0.5px);
-    border-width: 1px;
+    translate: none;
   }
-  .comic-book.is-glowing {
-    filter: blur(0) brightness(1.7) saturate(1.1);
+  .comic-book:nth-child(16n + 9),
+  .comic-book:nth-child(16n + 10),
+  .comic-book:nth-child(16n + 11),
+  .comic-book:nth-child(16n + 12),
+  .comic-book:nth-child(16n + 13),
+  .comic-book:nth-child(16n + 14),
+  .comic-book:nth-child(16n + 15),
+  .comic-book:nth-child(16n + 16) {
+    translate: 50% 0;
   }
 }

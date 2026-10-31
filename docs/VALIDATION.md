@@ -1,5 +1,8 @@
 # Validation — 31 October 2026
 
+Current brickwork revision: all covers are uniformly sized, upright and retain the 53:82 portrait ratio. Alternate rows are offset by half a cover. The blur and black vignette were restored to the pre-pile treatment; ten glow covers remain. Removed the four-label homepage strip and the standalone “Looking for an engineering partner?” section. Verified at five widths with no overflow or JavaScript errors; all 115 local HTML references resolve. Earlier pile-specific notes below describe superseded revisions.
+
+
 Latest pile revision: all five widths passed with 80 covers, ten glows and no overflow or JavaScript errors. Unrotated cover box proportions remain 53:82. Confirmed that glowing covers have zero blur and no ancestor introduces blur; the overall pile has no animation or transform over time. Wide and mobile screenshots visually inspected. All 116 local HTML references and CSS assets resolve.
 
 Latest vignette revision: verified 80 portrait-ratio covers and exactly ten glowing covers at five widths (320–1906px). Cover width/height was checked against 53:82. No horizontal overflow or JavaScript errors. Wall motion remained disabled; black radial tint and foreground glows visually inspected on wide, desktop and mobile layouts. Prior three-glow checks below refer to the earlier revision.
