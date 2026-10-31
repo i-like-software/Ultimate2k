@@ -1,6 +1,6 @@
 # Ultimate2k (Pty) Ltd.
 
-Vanilla HTML, CSS and JavaScript website, prepared for Vercel. **Review version; not deployed.**
+Vanilla HTML, CSS and JavaScript website. **Deployed on Vercel:** [ultimate2k.vercel.app](https://ultimate2k.vercel.app).
 
 ## Current pages
 
@@ -23,11 +23,13 @@ The form creates a visible, copyable and downloadable brief in the visitor’s b
 
 ## Vercel
 
-Import `i-like-software/Ultimate2k` into Vercel after approving the review branch. Choose **Other** as the framework, the repository root as the project root, no build/install command, and `.` as the output directory. `vercel.json` declares the buildless static configuration and clean URLs. Internal `.html` links also work when opening files locally.
+The Vercel project is `ultimate2k`, with **Other** as the framework, the repository root as the project root, no build/install command, and `.` as the output directory. `vercel.json` declares the buildless static configuration and clean URLs. Internal `.html` links also work when opening files locally.
 
-The previous GitHub Pages setup is no longer used. Vercel access was confirmed, with no existing Ultimate2k project found. No deployment, custom domain or production setting has been changed. The repository remains on a draft review branch. Import the repository when the review is approved and you are ready to publish.
+The user authorised production deployment on 31 October 2026. Deployment `dpl_ryZd6duFpH9AKAG1eYVuN2XAQmkB` reached READY from commit `cf290799cd8ca3b6caa80c946e5cb4a058d82d3e`. Production is public; preview protection remains enabled. The source is still on `design/two-directions`; the draft PR has not been merged.
 
-Configuration reference: [Vercel static configuration](https://vercel.com/docs/project-configuration/vercel-json), [static builds](https://vercel.com/docs/builds). `noindex,nofollow` remains in the review HTML; remove it after launch content is approved.
+`ultimate2k.co.za` and `www.ultimate2k.co.za` are attached to this project, with www redirecting to the main domain. HostAfrica registration/DNS setup is still required. Vercel’s returned recommended records are: A `@` → `216.198.79.1`, A `@` → `64.29.17.1`, CNAME `www` → `c44aebcc6483cca3.vercel-dns-017.com`. Keep HostAfrica-managed DNS; its current guide lists nameservers `dan1.host-ww.net` and `dan2.host-ww.net`.
+
+Configuration reference: [Vercel static configuration](https://vercel.com/docs/project-configuration/vercel-json), [static builds](https://vercel.com/docs/builds). Review-only noindex metadata was removed for the authorised launch.
 
 ## Editing
 

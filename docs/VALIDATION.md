@@ -6,6 +6,6 @@
 - Four-link navigation verified; mobile menu opening and Escape dismissal passed.
 - Delivery-partnership query selection, local brief generation and downloadable Blob content passed. No contact submission endpoint exists.
 - Reduced-motion preference respected for the remaining page effects.
-- Vercel configuration parsed as JSON; no deployment has been performed.
+- Vercel configuration parsed as JSON. Production deployment reached READY, and the returned HTML at https://ultimate2k.vercel.app was verified as the current website. Custom-domain DNS remains pending at the external provider.
 
 No completed client projects, earned certifications, partnerships, phone number or company email are claimed. The company name is user-supplied.
