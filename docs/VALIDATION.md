@@ -1,5 +1,7 @@
 # Validation — 31 October 2026
 
+Latest pile revision: all five widths passed with 80 covers, ten glows and no overflow or JavaScript errors. Unrotated cover box proportions remain 53:82. Confirmed that glowing covers have zero blur and no ancestor introduces blur; the overall pile has no animation or transform over time. Wide and mobile screenshots visually inspected. All 116 local HTML references and CSS assets resolve.
+
 Latest vignette revision: verified 80 portrait-ratio covers and exactly ten glowing covers at five widths (320–1906px). Cover width/height was checked against 53:82. No horizontal overflow or JavaScript errors. Wall motion remained disabled; black radial tint and foreground glows visually inspected on wide, desktop and mobile layouts. Prior three-glow checks below refer to the earlier revision.
 
 Latest landing refinement: checked at 320, 390, 768, 1440 and 1906px with no overflow or JavaScript errors. Verified 80 cover panels, exactly three glowing panels, computed blur 0.65px on desktop and no animation or transform over time. Desktop/wide/mobile screenshots inspected; all 116 local HTML references and CSS assets resolve.

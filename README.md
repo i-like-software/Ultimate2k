@@ -15,6 +15,8 @@ The landing uses a **stationary**, darkened wall of original illustrated comic-b
 
 The wall contains 80 panels with programming-pun titles, a slight blur and a black radial vignette, lighter at the centre and darker at the edges. Exactly ten covers have a restrained, steady glow.
 
+The current arrangement is a loose pile: staggered columns, varied cover sizes, small rotations and overlapping edges. The ten glowing covers remain sharp; only other covers are blurred.
+
 ## Content basis
 
 The user supplied the brand, logo and company name **Ultimate2k (Pty) Ltd.** The requested Software Development Tenders chat supplied a fact-separated handoff: a South African four-person founding team, two software engineers and two business analysts, full-stack/mobile/RAG capabilities and openness to delivery partnerships.

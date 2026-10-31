@@ -1,5 +1,7 @@
 # Static comic-cover wall
 
+Current pile treatment: 80 covers flow in staggered columns with varied widths, slight rotations and overlapping paper edges. All retain the portrait cover ratio. Blur is applied only to non-glowing covers; the ten highlighted covers and every parent layer have no blur. The black radial vignette and foreground glows are preserved. Nothing moves or animates.
+
 Generated with the built-in ImageGen tool on 31 October 2026. Used as a decorative background under a dark CSS overlay. It is stationary; no animated columns, pan, zoom or parallax are applied.
 
 Project asset: `assets/comic-wall.webp` (web-optimised copy).
