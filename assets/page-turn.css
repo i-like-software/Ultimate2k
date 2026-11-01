@@ -1,0 +1,179 @@
+.turn-locked {
+  overflow: hidden;
+}
+.page-turn {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  perspective: 1800px;
+  isolation: isolate;
+}
+.page-turn[hidden] {
+  display: none;
+}
+.turn-sheet {
+  position: absolute;
+  inset: 0;
+  background: #faf9f5;
+  border-left: 5px solid #171717;
+  transform-origin: left center;
+  transform: rotateY(100deg);
+  transition: transform 0.55s cubic-bezier(0.25, 0.7, 0.25, 1);
+  box-shadow: -25px 0 65px #0008;
+  backface-visibility: hidden;
+  background-image:
+    radial-gradient(#17171720 0.7px, transparent 0.7px),
+    linear-gradient(90deg, #ddd, transparent 12%, transparent 90%, #ccc);
+  background-size:
+    7px 7px,
+    100% 100%;
+}
+.turn-sheet > span {
+  position: absolute;
+  bottom: 30px;
+  left: 35px;
+  font:
+    700 10px "DM Sans",
+    sans-serif;
+  letter-spacing: 0.18em;
+  color: #555;
+}
+.is-open .turn-sheet,
+.is-arriving .turn-sheet {
+  transform: rotateY(0);
+}
+.is-arriving.arrival-done .turn-sheet {
+  transform: rotateY(-100deg);
+  transition-duration: 0.65s;
+}
+.turn-wait {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -45%);
+  width: min(360px, 85vw);
+  text-align: center;
+  color: #171717;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s;
+  font-family: "DM Sans", sans-serif;
+}
+.is-waiting .turn-wait {
+  opacity: 1;
+  visibility: visible;
+}
+.turn-wait svg {
+  width: 220px;
+  max-width: 100%;
+  overflow: visible;
+}
+.turn-wait svg path,
+.turn-wait svg ellipse {
+  fill: none;
+  stroke: #171717;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.turn-wait svg ellipse {
+  fill: #bf0035;
+}
+.turn-wait svg .turn-eyes {
+  fill: white;
+  stroke: white;
+  stroke-width: 1;
+}
+.turn-wait svg .turn-mask {
+  stroke: #171717;
+  stroke-width: 0.9;
+}
+.turn-wait svg .turn-web {
+  stroke: #777;
+  stroke-width: 1;
+  animation: web-tug 1.6s infinite;
+  transform-origin: 196px 18px;
+}
+.turn-wait svg .turn-corner {
+  fill: #eee;
+  stroke-width: 2;
+  animation: corner-tug 1.6s infinite;
+  transform-origin: 196px 8px;
+}
+.turn-hero {
+  animation: hero-tug 1.6s infinite;
+  transform-origin: 92px 134px;
+}
+.turn-wait svg .turn-ground {
+  stroke-width: 1;
+  stroke: #aaa;
+}
+.turn-wait p {
+  font-size: 14px;
+  line-height: 1.7;
+  margin: 8px 0 20px;
+}
+.turn-controls {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+.turn-controls button {
+  border: 2px solid #171717;
+  background: white;
+  padding: 10px 15px;
+  font:
+    700 12px "DM Sans",
+    sans-serif;
+  cursor: pointer;
+  box-shadow: 3px 3px #171717;
+  color: #171717;
+}
+.turn-controls button:first-child {
+  background: #171717;
+  color: white;
+}
+.turn-controls button:focus-visible {
+  outline: 3px solid #bf0035;
+  outline-offset: 5px;
+}
+@keyframes hero-tug {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  40%,
+  60% {
+    transform: rotate(-13deg) translateX(-8px);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+}
+@keyframes corner-tug {
+  0%,
+  100% {
+    transform: skewY(0);
+  }
+  40%,
+  60% {
+    transform: skewY(-9deg) scaleX(1.1);
+  }
+}
+@keyframes web-tug {
+  40%,
+  60% {
+    transform: scaleX(1.08);
+  }
+}
+.turn-still *,
+.motion-paused .page-turn * {
+  animation: none !important;
+  transition: none !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  .page-turn * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
