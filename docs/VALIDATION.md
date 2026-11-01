@@ -1,5 +1,7 @@
 # Validation — 31 October 2026
 
+Meet the Team and brand revision: five content pages checked at six widths (320, 390, 768, 900, 1024, 1440px), with no overflow or JavaScript errors after navigation fixes. All four portraits loaded, used grayscale styling and shared 4:5 frames; rendered image ratios matched the natural image ratios with no distortion. The five-link navigation and mobile Escape dismissal passed. SVG master was rendered and visually inspected; ICO includes 16/32/48px PNG entries, with additional 180/192/512px exports and a web manifest.
+
 Current brickwork revision: all covers are uniformly sized, upright and retain the 53:82 portrait ratio. Alternate rows are offset by half a cover. The blur and black vignette were restored to the pre-pile treatment; ten glow covers remain. Removed the four-label homepage strip and the standalone “Looking for an engineering partner?” section. Verified at five widths with no overflow or JavaScript errors; all 115 local HTML references resolve. Earlier pile-specific notes below describe superseded revisions.
 
 

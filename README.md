@@ -7,9 +7,10 @@ Vanilla HTML, CSS and JavaScript website. **Deployed on Vercel:** [ultimate2k.ve
 - `index.html` — Enterprise software solutions, capabilities, founding team and partnership introduction.
 - `services.html` — Web/business applications, mobile development, AI assistants/RAG, API integrations, data engineering and business intelligence.
 - `about.html` — Four-person founding team and the combined engineering/business-analysis approach.
+- `team.html` — Meet the Team, with supplied names, roles and face-focused black-and-white portraits in matching 4:5 frames.
 - `contact.html` — Project or delivery-partnership brief.
 
-Only pages with meaningful current content are included. Empty team, careers, news, certificate, policy and portfolio pages were removed. SEO, social marketing and unconfirmed e-commerce offerings were also removed. Earlier design explorations are archived outside the deployable site.
+Only pages with meaningful current content are included. The team page was added once names, roles and portraits were supplied. Empty careers, news, certificate, policy and portfolio pages remain excluded. SEO, social marketing and unconfirmed e-commerce offerings were also removed. Earlier design explorations are archived outside the deployable site.
 
 The landing uses a **stationary**, darkened wall of original illustrated comic-book covers. It has no wall animation, parallax or motion on scroll. Other page effects can be paused and respect reduced-motion preferences.
 
@@ -37,9 +38,10 @@ Configuration reference: [Vercel static configuration](https://vercel.com/docs/p
 
 ## Editing
 
-Edit the four HTML pages directly. Shared styling is in `assets/styles.css`; the comic treatment is in `assets/comic-refinement.css`; current site-specific adjustments and the static wall are in `assets/current.css`. Interactions live in `assets/site.js`. Fonts and assets are local; no runtime dependencies are needed. Font licences are in `assets/fonts/`.
+Edit the five HTML pages directly. Shared styling is in `assets/styles.css`; the comic treatment is in `assets/comic-refinement.css`; current site-specific adjustments and the static wall are in `assets/current.css`. Interactions live in `assets/site.js`. Fonts and assets are local; no runtime dependencies are needed. Font licences are in `assets/fonts/`.
 
 Open `index.html` in a browser to review the current site. The 404 page is a utility page, not part of the navigation.
 
 
 Current landing: covers use a fixed 53:82 portrait ratio, with no stretching. A black radial overlay ranges from a lighter centre to near-black edges. The foreground logo, headline, copy, navigation and controls have restrained soft glows. The wall remains stationary.
+
