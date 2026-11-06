@@ -337,6 +337,18 @@
   color: #171013;
   padding: 2px;
 }
+.comic-cover-logo {
+  position: absolute;
+  width: 54%;
+  height: 35%;
+  left: 23%;
+  top: 41%;
+  padding: 6%;
+  background: #f4eddf;
+  border: 2px solid #171013;
+  box-shadow: 3px 3px 0 #171013;
+  transform: rotate(-5deg);
+}
 .comic-book.is-glowing {
   z-index: 1;
   filter: brightness(1.7) saturate(1.1);

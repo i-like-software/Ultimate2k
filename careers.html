@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="assets/comic-refinement.css" />
     <link rel="stylesheet" href="assets/current.css" />
     <link rel="stylesheet" href="assets/team.css" />
-    <link rel="stylesheet" href="assets/future-comic.css" />
     <script src="assets/site.js" defer></script>
   </head>
   <body class="comic" id="top">
@@ -72,18 +71,29 @@
         <div class="section-head">
           <div>
             <p class="eyebrow">02 / APPLY</p>
-            <h2 id="apply-title">Tell us how you sell.</h2>
+            <h2 id="apply-title">Four questions. No CV required.</h2>
           </div>
           <div>
-            <p>Email a brief introduction and include:</p>
-            <ul>
-              <li>Your name and preferred contact details.</li>
-              <li>One business sale you handled and your role in closing it. An anonymised example is fine.</li>
-              <li>The types of South African businesses you would approach and why.</li>
-              <li>A LinkedIn profile or CV, if you’d like to share one.</li>
-            </ul>
-            <a class="button" href="mailto:sekwati@ultimate2k.co.za?subject=Ultimate2k%20sales%20representative%20application">Apply by email <span aria-hidden="true">↗</span></a>
-            <p><a href="mailto:sekwati@ultimate2k.co.za">sekwati@ultimate2k.co.za</a></p>
+            <p>Tell us about the deals you’ve worked on and how you’d build a sales pipeline for Ultimate2k.</p>
+            <form id="sales-application">
+              <div class="form-grid">
+                <label>Full name <input name="name" autocomplete="name" required maxlength="100" /></label>
+                <label>Email <input name="email" type="email" autocomplete="email" required maxlength="150" /></label>
+                <label>Phone (optional) <input name="phone" type="tel" autocomplete="tel" maxlength="40" /></label>
+                <label>LinkedIn or CV link (optional) <input name="profile" type="url" maxlength="300" /></label>
+              </div>
+              <label>1. What software or technology services have you sold? Describe the clients you worked with.<textarea name="experience" required rows="3" maxlength="1000"></textarea></label>
+              <label>2. What was the largest deal you closed yourself? Give the value in rand and explain your role.<textarea name="deal" required rows="3" maxlength="1000"></textarea></label>
+              <label>3. Which five South African organisations would you approach for Ultimate2k, and what makes each a good fit?<textarea name="prospects" required rows="4" maxlength="1500"></textarea></label>
+              <label>4. What experience do you have with commission-only sales? Describe the outcome, or how you’d approach it for the first time.<textarea name="commission" required rows="3" maxlength="1000"></textarea></label>
+              <button class="button" type="submit">Prepare application email <span aria-hidden="true">↗</span></button>
+              <p class="form-status" role="status">Review your application before sending it from your email app.</p>
+              <div id="application-draft" hidden>
+                <label>Application draft <textarea id="application-body" readonly rows="9"></textarea></label>
+                <a class="button" id="application-email" href="mailto:info@ultimate2k.co.za">Open email app ↗</a>
+              </div>
+            </form>
+            <p>You can also email your application to <a href="mailto:info@ultimate2k.co.za">info@ultimate2k.co.za</a>.</p>
           </div>
         </div>
       </section>
@@ -117,7 +127,9 @@
     <button class="motion-toggle" type="button" aria-pressed="false">
       Pause effects <span aria-hidden="true">Ⅱ</span>
     </button>
+    <script src="assets/careers.js" defer></script>
   </body>
 </html>
+
 
 
