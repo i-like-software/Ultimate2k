@@ -91,6 +91,27 @@
   top: var(--photo-top);
   filter: grayscale(1) contrast(1.04);
 }
+.team-portrait:has(.portrait-colour:focus-visible) img,
+.team-portrait:has(.portrait-colour[aria-pressed="true"]) img {
+  filter: none;
+}
+@media (hover: hover) {
+  .team-portrait:hover img {
+    filter: none;
+  }
+}
+.portrait-colour {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+.portrait-colour:focus-visible {
+  outline: 3px solid white;
+  outline-offset: -6px;
+}
 .team-number {
   position: absolute;
   top: 12px;

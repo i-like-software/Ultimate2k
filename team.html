@@ -92,7 +92,7 @@
                   --photo-top: -35.74468085106383%;
                 "
                 decoding="async"
-              /><span class="team-number" aria-hidden="true">01</span>
+              /><span class="team-number" aria-hidden="true">01</span><button class="portrait-colour" type="button" aria-label="Keep this portrait in colour" aria-pressed="false"></button>
             </div>
             <div class="team-caption">
               <h2>Kabelo Makotanyane</h2>
@@ -112,7 +112,7 @@
                   --photo-top: -16.969696969696972%;
                 "
                 decoding="async"
-              /><span class="team-number" aria-hidden="true">02</span>
+              /><span class="team-number" aria-hidden="true">02</span><button class="portrait-colour" type="button" aria-label="Keep this portrait in colour" aria-pressed="false"></button>
             </div>
             <div class="team-caption">
               <h2>Kamohelo Kolanchu</h2>
@@ -132,7 +132,7 @@
                   --photo-top: -14.000000000000002%;
                 "
                 decoding="async"
-              /><span class="team-number" aria-hidden="true">03</span>
+              /><span class="team-number" aria-hidden="true">03</span><button class="portrait-colour" type="button" aria-label="Keep this portrait in colour" aria-pressed="false"></button>
             </div>
             <div class="team-caption">
               <h2>Darrel Nkosi</h2>
@@ -152,7 +152,7 @@
                   --photo-top: -9.230769230769232%;
                 "
                 decoding="async"
-              /><span class="team-number" aria-hidden="true">04</span>
+              /><span class="team-number" aria-hidden="true">04</span><button class="portrait-colour" type="button" aria-label="Keep this portrait in colour" aria-pressed="false"></button>
             </div>
             <div class="team-caption">
               <h2>Lunga Mdeltshe</h2>
@@ -225,5 +225,13 @@
         brief requires JavaScript.
       </p></noscript
     >
+      <script>
+      document.querySelectorAll('.portrait-colour').forEach((button) => {
+        button.addEventListener('click', () => {
+          button.setAttribute('aria-pressed', String(button.getAttribute('aria-pressed') !== 'true'));
+        });
+      });
+    </script>
   </body>
 </html>
+
