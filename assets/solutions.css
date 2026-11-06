@@ -61,3 +61,135 @@
 .lab-quote { margin-top:1rem; border-top:1px solid var(--lab-line); padding-top:1rem; }
 @media (max-width:760px) { .lab-layout { grid-template-columns:1fr; } .lab-frame-header { align-items:flex-start; } }
 @media (max-width:450px) { .lab-card { padding:.9rem; } .lab-body { padding:.75rem; } }
+
+.solution-picker,
+.solution-flow {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.solution-picker a {
+  padding: 16px;
+  border: 2px solid var(--lab-ink);
+  font-weight: 750;
+}
+
+.solution-picker a span {
+  color: var(--lab-accent);
+  margin-right: 6px;
+}
+
+.solution-picker a:hover {
+  background: #fff0f4;
+}
+
+.solution-story {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 24px 32px;
+  margin-top: 36px;
+  padding: clamp(18px, 3.5vw, 38px);
+  border: 2px solid var(--lab-ink);
+  box-shadow: 5px 5px 0 var(--lab-accent);
+  scroll-margin-top: 100px;
+}
+
+.solution-copy h2 {
+  margin: 0 0 12px;
+}
+
+.solution-copy h3 {
+  margin-top: 18px;
+}
+
+.solution-copy ul {
+  padding-left: 20px;
+}
+
+.solution-visual {
+  align-self: center;
+  margin: 0;
+  padding: clamp(14px, 2.5vw, 24px);
+  border: 1px solid var(--lab-ink);
+  background: #f7f4ef;
+}
+
+.solution-visual figcaption {
+  font-weight: 800;
+}
+
+.solution-flow {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0;
+  counter-reset: step;
+}
+
+.solution-flow li {
+  counter-increment: step;
+  background: white;
+  border: 1px solid var(--lab-ink);
+  padding: 10px;
+  overflow-wrap: anywhere;
+}
+
+.solution-flow li::before {
+  content: '0' counter(step);
+  display: block;
+  font: 700 .75rem/1.4 monospace;
+  color: var(--lab-accent);
+  margin-bottom: 6px;
+}
+
+.solution-flow span,
+.solution-next p,
+.solution-visual p,
+.solution-note {
+  color: var(--lab-muted);
+  font-size: .9rem;
+}
+
+.solution-flow span {
+  display: block;
+  margin-top: 5px;
+}
+
+.solution-next {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border-top: 1px solid var(--lab-line);
+  padding-top: 16px;
+}
+
+.solution-next p {
+  margin: 5px 0 0;
+}
+
+.solution-next .button {
+  flex-shrink: 0;
+}
+
+.solution-note {
+  margin-top: 22px;
+}
+
+@media (max-width: 800px) {
+  .solution-picker,
+  .solution-story {
+    grid-template-columns: 1fr;
+  }
+  .solution-next {
+    align-items: start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 460px) {
+  .solution-flow {
+    grid-template-columns: 1fr;
+  }
+}

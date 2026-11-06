@@ -1,54 +1,280 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Example Software Solutions | Ultimate2k</title>
-<meta name="description" content="Explore three interactive demos of custom Ultimate2k solutions for business launches, company knowledge and recruitment.">
-<meta name="theme-color" content="#ba0033">
-<link rel="canonical" href="https://ultimate2k.co.za/solutions">
-<link rel="icon" href="assets/icons/icon-192.png" sizes="192x192" type="image/png">
-<link rel="stylesheet" href="assets/styles.css">
-<link rel="stylesheet" href="assets/comic-refinement.css">
-<link rel="stylesheet" href="assets/current.css">
-<link rel="stylesheet" href="assets/team.css">
-<link rel="stylesheet" href="assets/solutions.css">
-<script src="assets/site.js" defer></script>
-
-</head>
-<body class="comic solutions-page" id="top">
-<a class="skip-link" href="#main">Skip to content</a>
-<header class="site-header">
-<a class="brand" href="index.html" aria-label="Ultimate2k home"><img src="assets/brand/u2k-logo.svg" alt=""><span class="brand-name">ultimate<span>2k</span></span></a>
-<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu <span aria-hidden="true">☰</span></button>
-<nav id="site-nav" aria-label="Main navigation">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Example Software Solutions | Ultimate2k</title>
+    <meta
+      name="description"
+      content="Explore three interactive demos of custom Ultimate2k solutions for business launches, company knowledge and recruitment."
+    />
+    <meta name="theme-color" content="#ba0033" />
+    <link rel="canonical" href="https://ultimate2k.co.za/solutions" />
+    <link
+      rel="icon"
+      href="assets/icons/icon-192.png"
+      sizes="192x192"
+      type="image/png"
+    />
+    <link rel="stylesheet" href="assets/styles.css" />
+    <link rel="stylesheet" href="assets/comic-refinement.css" />
+    <link rel="stylesheet" href="assets/current.css" />
+    <link rel="stylesheet" href="assets/team.css" />
+    <link rel="stylesheet" href="assets/solutions.css" />
+    <script src="assets/site.js" defer></script>
+  </head>
+  <body class="comic solutions-page" id="top">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Ultimate2k home"
+        ><img src="assets/brand/u2k-logo.svg" alt="" /><span class="brand-name"
+          >ultimate<span>2k</span></span
+        ></a
+      >
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="site-nav"
+      >
+        Menu <span aria-hidden="true">☰</span>
+      </button>
+      <nav id="site-nav" aria-label="Main navigation">
         <a href="index.html">Home</a>
         <a href="services.html">Services</a>
         <a href="solutions.html" aria-current="page">Solutions</a>
         <a href="about.html">About &amp; approach</a>
         <a href="team.html">Meet the team</a>
         <a href="careers.html">Careers</a>
-        <a href="contact.html" class="nav-contact">Start a project<span aria-hidden="true">↗</span></a>
+        <a href="contact.html" class="nav-contact"
+          >Start a project<span aria-hidden="true">↗</span></a
+        >
       </nav>
-</header>
-<main id="main" class="container lab-main">
-
-<header class="lab-head">
-  <p class="lab-kicker">Ultimate2k / Solutions lab</p>
-  <h1>See what we could build for you.</h1>
-  <p>Try three interactive examples of how Ultimate2k could help you get a business online, bring company knowledge together or organise hiring. Each demo uses fictional businesses and sample data.</p>
-</header>
-<div class="lab-cards">
-  <article class="lab-card"><p class="lab-kicker">01 / Launch</p><h2>Business Online Starter Pack</h2><p>Get a website, domain, business email and the tools your team needs to work online. Configure a sample setup and see its monthly support cost.</p><p><strong>R4,000–R20,000 setup</strong><br>Monthly support at 10% of the setup fee.</p><a class="lab-link" href="demo-starter.html">Try the starter pack configurator →</a></article>
-  <article class="lab-card"><p class="lab-kicker">02 / Connect</p><h2>Company Knowledge Hub</h2><p>Search company messages, documents and records together. Explore a staff workspace, shared calendar, leadership dashboard and simulated WhatsApp assistant.</p><p><strong>From R30,000</strong><br>Large integrations can reach seven figures.</p><a class="lab-link" href="demo-knowledge.html">Explore the knowledge hub →</a></article>
-  <article class="lab-card"><p class="lab-kicker">03 / Hire</p><h2>Applicant Tracking System</h2><p>Manage candidates from application to offer. Use job criteria to narrow the shortlist and move applicants through a hiring pipeline.</p><p><strong>From R25,000</strong><br>Indicative pricing for a tailored recruitment workflow.</p><a class="lab-link" href="demo-ats.html">Try the hiring workspace →</a></article>
-</div>
-<section class="lab-cta"><h2>Have a different problem to solve?</h2><p>These are starting points for a conversation. We also build custom software around your workflows, systems and constraints.</p><a class="lab-link" href="services.html">See our software development services →</a> · <a class="lab-link" href="contact.html">Start a project →</a></section>
-
-</main>
-<footer class="site-footer"><div class="container footer-bottom"><span>© Ultimate2k (Pty) Ltd.</span><a href="contact.html">Discuss a project ↗</a></div></footer>
-<button class="motion-toggle" type="button" aria-pressed="false">Pause motion</button>
-</body>
+    </header>
+    <main id="main" class="container lab-main">
+      <header class="lab-head">
+        <p class="lab-kicker">Ultimate2k / Example solutions</p>
+        <h1>What do you need your business to do?</h1>
+        <p>
+          Choose the problem you want to solve. See what we could build, what it
+          might cost and how it works in an interactive demo.
+        </p>
+      </header>
+      <nav class="solution-picker" aria-label="Choose a business goal">
+        <a href="#get-online"
+          ><span>01</span> Get my business online
+          <span aria-hidden="true">↓</span></a
+        >
+        <a href="#find-information"
+          ><span>02</span> Find company information
+          <span aria-hidden="true">↓</span></a
+        >
+        <a href="#organise-hiring"
+          ><span>03</span> Organise our hiring
+          <span aria-hidden="true">↓</span></a
+        >
+      </nav>
+      <div class="solution-stories">
+        <section
+          class="solution-story"
+          id="get-online"
+          aria-labelledby="starter-title"
+        >
+          <div class="solution-copy">
+            <p class="lab-kicker">01 / Get your business online</p>
+            <h2 id="starter-title">Business Online Starter Pack</h2>
+            <p>
+              Customers need somewhere to find you, see what you offer and get
+              in touch. We set up the website, domain and work email together,
+              then help your team get comfortable using them.
+            </p>
+            <h3>What you get</h3>
+            <ul>
+              <li>A website, domain setup and basic search optimisation.</li>
+              <li>
+                Business email and account setup for tools such as Microsoft 365
+                or Google Workspace.
+              </li>
+              <li>
+                Google Business Profile setup for eligible businesses, with
+                booking or a catalogue if you need them.
+              </li>
+            </ul>
+          </div>
+          <figure class="solution-visual">
+            <figcaption>How a customer reaches you</figcaption>
+            <ol class="solution-flow">
+              <li><strong>Find you</strong><span>Search or Maps</span></li>
+              <li>
+                <strong>See your services</strong><span>Your website</span>
+              </li>
+              <li>
+                <strong>Get in touch</strong><span>Your business inbox</span>
+              </li>
+            </ol>
+            <p>
+              <strong>Example · Copper Kettle Repairs</strong><br />A mobile
+              repair team gets a simple website, a work inbox and help setting
+              up its service-area listing.
+            </p>
+          </figure>
+          <div class="solution-next">
+            <div>
+              <strong>R4,000–R20,000 setup</strong>
+              <p>
+                Monthly support is 10% of the setup fee. Provider subscriptions
+                and renewals are separate.
+              </p>
+            </div>
+            <a class="button" href="demo-starter.html"
+              >Configure a sample quote <span aria-hidden="true">↗</span></a
+            >
+          </div>
+        </section>
+        <section
+          class="solution-story"
+          id="find-information"
+          aria-labelledby="hub-title"
+        >
+          <div class="solution-copy">
+            <p class="lab-kicker">02 / Find company information</p>
+            <h2 id="hub-title">Company Knowledge Hub</h2>
+            <p>
+              When a decision is buried in WhatsApp and the supporting document
+              is in someone’s inbox, work slows down. The hub gives staff one
+              place to search the sources they can access and see where an
+              answer came from.
+            </p>
+            <h3>What you get</h3>
+            <ul>
+              <li>
+                Search across connected messages, email, documents and CRM
+                records.
+              </li>
+              <li>A shared calendar and dashboards for teams and managers.</li>
+              <li>
+                Optional mobile access and a WhatsApp assistant, scoped to your
+                organisation.
+              </li>
+            </ul>
+          </div>
+          <figure class="solution-visual">
+            <figcaption>From scattered messages to a usable answer</figcaption>
+            <ol class="solution-flow">
+              <li>
+                <strong>Connect sources</strong
+                ><span>WhatsApp · Email · Drive</span>
+              </li>
+              <li>
+                <strong>Ask a question</strong
+                ><span>“Who approves invoices?”</span>
+              </li>
+              <li>
+                <strong>Check the answer</strong
+                ><span>Open the source record</span>
+              </li>
+            </ol>
+            <p>
+              <strong>Example · Kiteframe Studio</strong><br />A staff member
+              finds the finance approval process and the person responsible
+              without chasing it across chats.
+            </p>
+          </figure>
+          <div class="solution-next">
+            <div>
+              <strong>From R30,000</strong>
+              <p>
+                Larger deployments can reach seven figures. The number of
+                systems, access rules and reporting needs shape the quote.
+              </p>
+            </div>
+            <a class="button" href="demo-knowledge.html"
+              >Search the sample workspace <span aria-hidden="true">↗</span></a
+            >
+          </div>
+        </section>
+        <section
+          class="solution-story"
+          id="organise-hiring"
+          aria-labelledby="ats-title"
+        >
+          <div class="solution-copy">
+            <p class="lab-kicker">03 / Organise your hiring</p>
+            <h2 id="ats-title">Applicant Tracking System</h2>
+            <p>
+              Give your hiring team one place to receive applications, review
+              candidates and see who needs a response. We shape the screening
+              fields and hiring stages around how you recruit.
+            </p>
+            <h3>What you get</h3>
+            <ul>
+              <li>A job application form and shared candidate queue.</li>
+              <li>
+                Filters for role requirements such as skills and experience.
+              </li>
+              <li>A hiring pipeline your team manages from review to offer.</li>
+            </ul>
+          </div>
+          <figure class="solution-visual">
+            <figcaption>How a candidate moves through hiring</figcaption>
+            <ol class="solution-flow">
+              <li>
+                <strong>Application received</strong
+                ><span>One shared queue</span>
+              </li>
+              <li>
+                <strong>Review candidates</strong
+                ><span>Skills and experience</span>
+              </li>
+              <li>
+                <strong>Shortlist and interview</strong
+                ><span>Your team moves each candidate</span>
+              </li>
+            </ol>
+            <p>
+              <strong>Example · Klipline Logistics</strong><br />A depot manager
+              filters applicants for dispatch experience and moves promising
+              candidates to the interview stage.
+            </p>
+          </figure>
+          <div class="solution-next">
+            <div>
+              <strong>From R25,000</strong>
+              <p>
+                Multiple hiring teams, permissions, scheduling and reporting
+                affect the quote.
+              </p>
+            </div>
+            <a class="button" href="demo-ats.html"
+              >Try the hiring workspace <span aria-hidden="true">↗</span></a
+            >
+          </div>
+        </section>
+      </div>
+      <p class="solution-note">
+        Demo businesses and data are fictional. Prices are indicative and
+        confirmed after we agree the scope.
+      </p>
+      <section class="lab-cta">
+        <h2>Have a different problem to solve?</h2>
+        <p>
+          These are starting points for a conversation. We also build custom
+          software around your workflows, systems and constraints.
+        </p>
+        <a class="lab-link" href="services.html"
+          >See our software development services →</a
+        >
+        · <a class="lab-link" href="contact.html">Start a project →</a>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-bottom">
+        <span>© Ultimate2k (Pty) Ltd.</span
+        ><a href="contact.html">Discuss a project ↗</a>
+      </div>
+    </footer>
+    <button class="motion-toggle" type="button" aria-pressed="false">
+      Pause motion
+    </button>
+  </body>
 </html>
-
-
