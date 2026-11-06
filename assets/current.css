@@ -517,31 +517,40 @@
     translate: 50% 0;
   }
 }
-/* Full-size marks in the same staggered rows as the original covers. */
-.logo-cloud {
-  --logo-size: max(calc(100vw / 15), calc(max(790px, 100svh) / 8));
-  width: calc(var(--logo-size) * 16);
-  gap: 0;
-  filter: none;
+/* Circular app icons arranged in a tapered hexagonal cluster. */
+.watch-cloud {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(116vw, 1100px);
+  aspect-ratio: 5 / 4;
+  translate: -50% -50%;
+  z-index: -3;
+  pointer-events: none;
 }
-.logo-cloud .comic-book {
-  display: block;
-  width: 100%;
-  height: auto;
+
+.watch-app {
+  position: absolute;
+  top: var(--app-y);
+  left: var(--app-x);
+  width: var(--app-size);
   aspect-ratio: 1;
-  background: none;
-  border: 0;
-  box-shadow: none;
+  translate: -50% -50%;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #f1efe9;
+  box-shadow: 0 0 0 1px #ffffff26, 0 5px 12px #0008;
 }
-@media (max-width: 800px) {
-  .logo-cloud {
-    --logo-size: max(calc(100vw / 9), calc(max(790px, 100svh) / 12));
-    width: calc(var(--logo-size) * 10);
-  }
+
+.watch-app svg {
+  display: block;
+  width: 71%;
+  height: 71%;
 }
-@media (max-width: 430px) {
-  .logo-cloud {
-    --logo-size: max(calc(100vw / 7), calc(max(790px, 100svh) / 16));
-    width: calc(var(--logo-size) * 8);
+
+@media (max-width: 600px) {
+  .watch-cloud {
+    width: 145vw;
   }
 }
