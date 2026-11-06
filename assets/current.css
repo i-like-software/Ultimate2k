@@ -517,40 +517,41 @@
     translate: 50% 0;
   }
 }
-/* Circular app icons arranged in a tapered hexagonal cluster. */
-.watch-cloud {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: min(116vw, 1100px);
-  aspect-ratio: 5 / 4;
-  translate: -50% -50%;
-  z-index: -3;
-  pointer-events: none;
+/* Staggered app tiles extend past the splash edges. */
+.logo-cloud {
+  --logo-size: max(calc(100vw / 15), calc(max(790px, 100svh) / 8));
+  width: calc(var(--logo-size) * 16);
+  gap: 0;
+  background: #53514e;
+  filter: none;
 }
 
-.watch-app {
-  position: absolute;
-  top: var(--app-y);
-  left: var(--app-x);
-  width: var(--app-size);
-  aspect-ratio: 1;
-  translate: -50% -50%;
+.logo-cloud .logo-squircle {
   display: grid;
   place-items: center;
-  border-radius: 50%;
-  background: #f1efe9;
-  box-shadow: 0 0 0 1px #ffffff26, 0 5px 12px #0008;
+  aspect-ratio: 1;
+  background: #eeeae3;
+  border: 0;
+  border-radius: 23%;
+  box-shadow: inset 0 0 0 1px #17101333;
 }
 
-.watch-app svg {
+.logo-squircle svg {
   display: block;
-  width: 71%;
-  height: 71%;
+  width: 82%;
+  height: 82%;
 }
 
-@media (max-width: 600px) {
-  .watch-cloud {
-    width: 145vw;
+@media (max-width: 800px) {
+  .logo-cloud {
+    --logo-size: max(calc(100vw / 9), calc(max(790px, 100svh) / 12));
+    width: calc(var(--logo-size) * 10);
+  }
+}
+
+@media (max-width: 430px) {
+  .logo-cloud {
+    --logo-size: max(calc(100vw / 7), calc(max(790px, 100svh) / 16));
+    width: calc(var(--logo-size) * 8);
   }
 }
