@@ -1,0 +1,88 @@
+/* Original presentation layer: measured entrances and an editorial scroll state. */
+.presentation-enter {
+  animation: u2k-present-in 650ms cubic-bezier(.2,.65,.3,1) both;
+  animation-delay: var(--presentation-delay, 0ms);
+}
+@keyframes u2k-present-in {
+  from { opacity: .62; transform: translate3d(0, 18px, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+.business-network::before {
+  content: "";
+  position: absolute;
+  width: min(74vw, 1060px);
+  aspect-ratio: 1;
+  right: -22%;
+  top: -18%;
+  border-radius: 50%;
+  border: 1px solid #ffffff18;
+  border-left: 2px solid #dc0c4670;
+  border-bottom: 1px solid #ffffff45;
+  box-shadow: 0 0 0 55px #ffffff03, 0 0 0 112px #ffffff03;
+  animation: u2k-orbit 58s linear infinite;
+  pointer-events: none;
+}
+@keyframes u2k-orbit { to { transform: rotate(360deg); } }
+.comic .site-header {
+  transition: background-color 260ms ease, color 260ms ease, box-shadow 260ms ease;
+}
+.comic.presentation-scrolled .site-header {
+  background: #ffffffef;
+  border-bottom-color: #17171c18;
+  box-shadow: 0 6px 24px #15151c0a;
+  backdrop-filter: blur(18px);
+}
+.comic.presentation-scrolled .site-header .brand-name,
+.comic.presentation-scrolled .site-header nav > a,
+.comic.presentation-scrolled .site-header .menu-toggle {
+  color: #19191c;
+  text-shadow: none;
+}
+.comic.presentation-scrolled .site-header .brand-name > span { color: var(--red); }
+.comic.presentation-scrolled .site-header .nav-contact {
+  border-bottom-color: var(--red);
+}
+.comic.presentation-scrolled .site-header .menu-toggle {
+  background: #fff;
+  border-color: #19191c;
+}
+.comic .site-header nav.open > a { color: #19191c; text-shadow: none; }
+.comic .site-header .brand img { transition: transform 200ms ease; }
+.comic .site-header .brand:hover img { transform: rotate(-3deg); }
+.comic .text-link > span,
+.comic .button > span,
+.comic .nav-contact > span {
+  display: inline-block;
+  transition: transform 220ms ease;
+}
+.comic .text-link:hover > span,
+.comic .button:hover > span,
+.comic .nav-contact:hover > span { transform: translate(2px, -2px); }
+@media (max-width: 700px) {
+  .business-network::before { width: 120vw; right: -70%; top: 0; opacity: .5; }
+  .presentation-enter { animation-duration: 500ms; }
+}
+.motion-paused .presentation-enter { animation: none; opacity: 1; transform: none; }
+.motion-paused .business-network::before { animation-play-state: paused; }
+.motion-paused .site-header,
+.motion-paused .site-header .brand img,
+.motion-paused .text-link > span,
+.motion-paused .button > span,
+.motion-paused .nav-contact > span { transition: none; }
+.motion-paused .site-header .brand:hover img,
+.motion-paused .text-link:hover > span,
+.motion-paused .button:hover > span,
+.motion-paused .nav-contact:hover > span { transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .presentation-enter { animation: none; opacity: 1; transform: none; }
+  .business-network::before { animation: none; }
+  .comic .site-header,
+  .comic .site-header .brand img,
+  .comic .text-link > span,
+  .comic .button > span,
+  .comic .nav-contact > span { transition: none; }
+  .comic .site-header .brand:hover img,
+  .comic .text-link:hover > span,
+  .comic .button:hover > span,
+  .comic .nav-contact:hover > span { transform: none; }
+}

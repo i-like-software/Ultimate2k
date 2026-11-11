@@ -94,6 +94,7 @@
       });
     }),
   );
+  document.querySelectorAll(".cast-colour").forEach(button => button.addEventListener("click", () => {button.setAttribute("aria-pressed", String(button.getAttribute("aria-pressed") !== "true"));}));
   const form = document.querySelector("#brief-form");
   if (form) {
     const params = new URLSearchParams(location.search);

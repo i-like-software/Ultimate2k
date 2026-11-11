@@ -25,6 +25,11 @@
     <script src="assets/site.js" defer></script>
     <script src="assets/pricing.js" defer></script>
   <link rel="stylesheet" href="assets/ux.css">
+<link rel="stylesheet" href="assets/cinema.css">
+<link rel="stylesheet" href="assets/page-presentation.css">
+<link rel="stylesheet" href="assets/pricing-presentation.css">
+<link rel="stylesheet" href="assets/presentation-motion.css">
+<script src="assets/presentation-motion.js" defer></script>
 </head>
   <body class="comic pricing-page" id="top">
     <a class="skip-link" href="#main">Skip to content</a>
@@ -45,24 +50,25 @@
       <nav id="site-nav" aria-label="Main navigation"><a href="index.html">Home</a>
 <a href="services.html">Services</a>
 <a href="pricing.html" aria-current="page">Pricing</a>
-<a href="team.html">Meet the team</a>
+
 <a href="contact.html" class="nav-contact">Start a project<span aria-hidden="true">↗</span></a></nav>
     </header>
     <main class="container pricing-main" id="main">
-      <header class="pricing-intro">
+      <header class="pricing-intro"><div class="cinema-title-art" aria-hidden="true"></div><div class="pp-hero-layout"><div class="pp-intro-copy">
         <p class="pricing-eyebrow">Clear scope / One business at a time</p>
         <h1>Plans, pricing<br />and what’s included.</h1>
         <p>
           Start with one active user. Choose the coverage your team needs, see
           the setup scope and know what is priced separately.
         </p>
-      </header>
+        <p class="pp-hero-price">From <strong>R49/user/month</strong> · Setup from <strong>R1,490 once</strong><br>Domain, mailbox and supplier fees separate.</p>
+      </div><div class="pp-orbit-art" aria-hidden="true"><div class="pp-orbit pp-orbit-one"></div><div class="pp-orbit pp-orbit-two"></div><div class="pp-orbit-core"></div><span class="pp-orbit-marker pp-marker-one"></span><span class="pp-orbit-marker pp-marker-two"></span><span class="pp-art-coordinate">SCOPE / SUPPORT / SCALE</span></div></div></header>
       <nav class="ux-jump-links" aria-label="On this page"><a href="#price-cards">Choose a plan</a><a href="#calculator">Calculate your cost</a><a href="#coverage">Detailed coverage</a><a href="#setup">Setup fees</a><a href="#faq-title">Questions</a></nav><div class="pricing-notice">
         <strong>No minimum monthly account fee.</strong> Fees below are ZAR
         totals for the stated service scope. Domain, workspace, mailbox and
         other supplier charges are separate and agreed before purchase.
       </div>
-      <div class="pricing-grid" id="price-cards"><article class="pricing-card" id="micro">
+      <div class="pp-section-heading"><div><p class="pp-chapter">01 / CHOOSE YOUR COVERAGE</p><h2>Different levels.<br>The same clear scope.</h2></div><p>Website care on its own, or support for the people and tools in your business. Choose the coverage before calculating your team’s cost.</p></div><div class="pricing-grid" id="price-cards"><article class="pricing-card" id="micro">
   <span class="pricing-label">1–5 users · Remote service</span>
   <h2>Micro</h2><p>A simple hosted website with help when the platform has a fault.</p>
   <div class="pricing-fee">R49</div><div class="pricing-unit">per active user / month</div>
@@ -103,15 +109,16 @@
         </p></noscript
       >
 
+      <section class="pp-cost-model" aria-labelledby="pp-cost-title"><div class="pp-model-intro"><p class="pp-chapter">HOW THE COST FITS TOGETHER</p><h2 id="pp-cost-title">Three parts.<br>No guessing.</h2><p>Your service fee is only one part of the picture. We confirm the whole scope before work starts.</p></div><ol class="pp-cost-steps"><li><span class="pp-cost-symbol" aria-hidden="true">01</span><div><h3>One-off setup</h3><p>A fixed package to prepare and launch your agreed setup.</p><a href="#setup">See setup scopes <span aria-hidden="true">↗</span></a></div></li><li><span class="pp-cost-symbol" aria-hidden="true">02</span><div><h3>Monthly service</h3><p>Your chosen plan multiplied by active named users. No minimum account fee.</p><a href="#calculator">Calculate below <span aria-hidden="true">↓</span></a></div></li><li><span class="pp-cost-symbol" aria-hidden="true">03</span><div><h3>Separate supplier costs</h3><p>Domain, mailbox and software-provider fees, agreed before purchase.</p><a href="#faq-title">Read the questions <span aria-hidden="true">↗</span></a></div></li></ol></section>
       <section
         class="pricing-section"
         id="calculator"
         aria-labelledby="calculator-title"
       >
-        <p class="pricing-eyebrow">Build your estimate</p>
-        <h2 id="calculator-title">Your plan. Your team size.</h2>
+        <p class="pricing-eyebrow pp-chapter">02 / BUILD YOUR ESTIMATE</p>
+        <div class="pp-section-heading"><h2 id="calculator-title">Your team.<br>Your numbers.</h2><p>Set your coverage and team size. See the monthly service fee and one-off setup together, then ask us to confirm the fit.</p></div>
         <div class="price-calculator" id="price-calculator">
-          <div class="price-calculator-controls">
+          <div class="price-calculator-controls"><p class="pp-panel-label">SET YOUR SCOPE <span aria-hidden="true">↘</span></p>
             <label for="price-plan"
               >Choose a monthly plan<select class="price-field" id="price-plan">
                 <option value="micro">Micro · R49/user/month</option>
@@ -146,7 +153,7 @@
               Complex environments and extra locations receive a separate scope.
             </p>
           </div>
-          <div class="price-summary">
+          <div class="price-summary"><p class="pp-panel-label">YOUR ESTIMATE <span aria-hidden="true">↗</span></p>
             <div aria-live="polite" aria-atomic="true">
               <dl>
                 <div>
@@ -184,7 +191,7 @@
         id="coverage"
         aria-labelledby="coverage-title"
       >
-        <h2 id="coverage-title">Compare the coverage</h2>
+        <p class="pp-chapter">03 / THE DETAILS BEHIND THE PLAN</p><h2 id="coverage-title">Compare the coverage.</h2>
         <p>
           All monthly limits below apply to one business/site. Assisted support
           is pooled across active users, and website edits, onboarding events
@@ -397,7 +404,7 @@
       </section>
 
       <section class="pricing-section" id="setup" aria-labelledby="setup-title">
-        <h2 id="setup-title">A fixed start with a written scope</h2>
+        <p class="pp-chapter">04 / A DEFINED STARTING POINT</p><h2 id="setup-title">Fixed setup.<br>Written scope.</h2>
         <p>
           We use supported templates and the content you supply. Each setup
           includes one business, one brand, one location and one domain
@@ -424,7 +431,7 @@
       </section>
 
       <section
-        class="pricing-section price-two-column"
+        class="pricing-section price-two-column pp-terms"
         aria-label="Scope and billing terms"
       >
         <div>
@@ -469,7 +476,7 @@
       </section>
 
       <section class="pricing-section price-faq" aria-labelledby="faq-title">
-        <h2 id="faq-title">Before you choose a plan</h2>
+        <p class="pp-chapter">05 / BEFORE YOU DECIDE</p><h2 id="faq-title">A few good questions.</h2>
         <details>
           <summary>Can one person use a plan?</summary>
           <p>
@@ -583,13 +590,13 @@
         >
       </section>
     </main>
-    <footer class="footer container">
-      <div class="footer-main">
+    <footer class="footer">
+      <div class="footer-main container">
         <div><a class="brand" href="index.html" aria-label="Ultimate2k home"><img src="assets/brand/u2k-logo.svg" alt=""><span class="brand-name">ultimate<span>2k</span></span></a><p class="company-name">Ultimate2k (Pty) Ltd.<br>Business IT setup, support and custom software.<br>South Africa · Remote delivery</p><a href="mailto:info@ultimate2k.co.za">info@ultimate2k.co.za</a></div>
         <div><h3>Explore</h3><a href="pricing.html">Plans and coverage</a><a href="industries.html">Your industry</a><a href="services.html">Services</a></div>
-        <div><h3>Company</h3><a href="about.html">About Ultimate2k</a><a href="team.html">Meet the team</a><a href="careers.html">Careers</a><a href="contact.html">Get started</a><a href="privacy.html">Privacy</a></div>
+        <div><h3>Company</h3><a href="about.html">About Ultimate2k</a><a href="careers.html">Careers</a><a href="contact.html">Get started</a><a href="privacy.html">Privacy</a></div>
       </div>
-      <div class="footer-bottom"><span>© 2026 Ultimate2k (Pty) Ltd.</span><a href="#top">Back to top ↑</a></div>
+      <div class="footer-bottom container"><span>© 2026 Ultimate2k (Pty) Ltd.</span><a href="#top">Back to top ↑</a></div>
     </footer>
     <button class="motion-toggle" type="button" aria-pressed="false">
       Pause motion
