@@ -56,7 +56,7 @@
         "More support time, primary-device reviews and daily website backups.",
       highlights: [
         "Essential coverage with device inventory",
-        "Monthly patch-status review and agreed updates",
+        "Monthly computer-update review and agreed updates",
         "60 support minutes per user each month",
         "First response target of 4 business hours",
       ],
@@ -78,7 +78,7 @@
       highlights: [
         "Care coverage with up to 8 website pages",
         "90 support minutes per user each month",
-        "2 scheduled workflow-change hours per business",
+        "2 hours/month to adjust agreed existing workflows",
         "First response target of 2 business hours",
       ],
       allowance: 90,
@@ -189,8 +189,7 @@
 
   planField.addEventListener("change", () => {
     const plan = getPlan(planField.value);
-    if (Number(usersField.value) > plan.maxUsers)
-      usersField.value = String(plan.maxUsers);
+
     update();
   });
   usersField.addEventListener("input", update);
@@ -198,8 +197,7 @@
     const link = event.target.closest("[data-select-plan]");
     if (!link) return;
     planField.value = link.dataset.selectPlan;
-    if (Number(usersField.value) > getPlan(planField.value).maxUsers)
-      usersField.value = String(getPlan(planField.value).maxUsers);
+
     update();
   });
 
@@ -210,7 +208,7 @@
   if (
     Number.isInteger(initialUsers) &&
     initialUsers >= 1 &&
-    initialUsers <= getPlan(planField.value).maxUsers
+    initialUsers <= 500
   )
     usersField.value = String(initialUsers);
   update();

@@ -24,7 +24,8 @@
     <link rel="stylesheet" href="assets/pricing.css" />
     <script src="assets/site.js" defer></script>
     <script src="assets/pricing.js" defer></script>
-  </head>
+  <link rel="stylesheet" href="assets/ux.css">
+</head>
   <body class="comic pricing-page" id="top">
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header">
@@ -41,27 +42,22 @@
       >
         Menu <span aria-hidden="true">☰</span>
       </button>
-      <nav id="site-nav" aria-label="Main navigation">
-        <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
-        <a href="industries.html">Industries</a>
-        <a href="pricing.html" aria-current="page">Pricing</a>
-        <a href="solutions.html">Examples</a>
-        <a href="about.html">About</a>
-        <a href="careers.html">Careers</a>
-        <a href="contact.html" class="nav-contact">Get started<span aria-hidden="true">↗</span></a>
-      </nav>
+      <nav id="site-nav" aria-label="Main navigation"><a href="index.html">Home</a>
+<a href="services.html">Services</a>
+<a href="pricing.html" aria-current="page">Pricing</a>
+<a href="team.html">Meet the team</a>
+<a href="contact.html" class="nav-contact">Start a project<span aria-hidden="true">↗</span></a></nav>
     </header>
     <main class="container pricing-main" id="main">
       <header class="pricing-intro">
         <p class="pricing-eyebrow">Clear scope / One business at a time</p>
-        <h1>IT support that fits<br />your next chapter.</h1>
+        <h1>Plans, pricing<br />and what’s included.</h1>
         <p>
           Start with one active user. Choose the coverage your team needs, see
           the setup scope and know what is priced separately.
         </p>
       </header>
-      <div class="pricing-notice">
+      <nav class="ux-jump-links" aria-label="On this page"><a href="#price-cards">Choose a plan</a><a href="#calculator">Calculate your cost</a><a href="#coverage">Detailed coverage</a><a href="#setup">Setup fees</a><a href="#faq-title">Questions</a></nav><div class="pricing-notice">
         <strong>No minimum monthly account fee.</strong> Fees below are ZAR
         totals for the stated service scope. Domain, workspace, mailbox and
         other supplier charges are separate and agreed before purchase.
@@ -86,7 +82,7 @@
   <span class="pricing-label">1–50 users · Remote service</span>
   <h2>Care</h2><p>More support time, primary-device reviews and daily website backups.</p>
   <div class="pricing-fee">R599</div><div class="pricing-unit">per active user / month</div>
-  <ul><li>Essential coverage with device inventory</li><li>Monthly patch-status review and agreed updates</li><li>60 support minutes per user each month</li><li>First response target of 4 business hours</li></ul>
+  <ul><li>Essential coverage with device inventory</li><li>Monthly computer-update review and agreed updates</li><li>60 support minutes per user each month</li><li>First response target of 4 business hours</li></ul>
   <p><strong>R7,990 once</strong><br>Care Onboarding</p>
   <a class="price-button" href="#calculator" data-select-plan="care">Calculate Care</a>
 </article>
@@ -94,7 +90,7 @@
   <span class="pricing-label">1–50 users · Remote service</span>
   <h2>Operations</h2><p>More hands-on support and scheduled changes to agreed template workflows.</p>
   <div class="pricing-fee">R899</div><div class="pricing-unit">per active user / month</div>
-  <ul><li>Care coverage with up to 8 website pages</li><li>90 support minutes per user each month</li><li>2 scheduled workflow-change hours per business</li><li>First response target of 2 business hours</li></ul>
+  <ul><li>Care coverage with up to 8 website pages</li><li>90 support minutes per user each month</li><li>2 hours/month to adjust agreed existing workflows</li><li>First response target of 2 business hours</li></ul>
   <p><strong>R11,990 once</strong><br>Operations Onboarding</p>
   <a class="price-button" href="#calculator" data-select-plan="operations">Calculate Operations</a>
 </article></div>
@@ -199,7 +195,7 @@
             >Download the detailed plan coverage</a
           >
         </p>
-        <div
+        <details class="ux-coverage-details"><summary>Show the full plan comparison</summary><div
           class="price-comparison"
           tabindex="0"
           role="region"
@@ -391,7 +387,7 @@
               </tr>
             </tbody>
           </table>
-        </div>
+        </div></details>
         <div class="pricing-notice">
           Service hours are Monday–Friday, 09:00–17:00 SAST, excluding South
           African public holidays. Response times are targets during those
@@ -590,7 +586,7 @@
     <footer class="footer container">
       <div class="footer-main">
         <div><a class="brand" href="index.html" aria-label="Ultimate2k home"><img src="assets/brand/u2k-logo.svg" alt=""><span class="brand-name">ultimate<span>2k</span></span></a><p class="company-name">Ultimate2k (Pty) Ltd.<br>Business IT setup, support and custom software.<br>South Africa · Remote delivery</p><a href="mailto:info@ultimate2k.co.za">info@ultimate2k.co.za</a></div>
-        <div><h3>Explore</h3><a href="pricing.html">Plans and coverage</a><a href="industries.html">Your industry</a><a href="services.html">Services</a><a href="solutions.html">Interactive examples</a></div>
+        <div><h3>Explore</h3><a href="pricing.html">Plans and coverage</a><a href="industries.html">Your industry</a><a href="services.html">Services</a></div>
         <div><h3>Company</h3><a href="about.html">About Ultimate2k</a><a href="team.html">Meet the team</a><a href="careers.html">Careers</a><a href="contact.html">Get started</a><a href="privacy.html">Privacy</a></div>
       </div>
       <div class="footer-bottom"><span>© 2026 Ultimate2k (Pty) Ltd.</span><a href="#top">Back to top ↑</a></div>

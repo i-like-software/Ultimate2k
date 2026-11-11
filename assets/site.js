@@ -120,13 +120,36 @@
       const industry = industries[params.get("industry")];
       if (industry) form.elements.industry.value = industry;
     }
+    const estimateBox = document.querySelector("#enquiry-estimate");
+    const pricing = window.Ultimate2kPricing;
+    function estimateSummary() {
+      if (!pricing || !estimateBox) return "";
+      const selected = form.elements.service.value;
+      const plan = pricing.plans.find(item => item.id === selected);
+      const users = Number(form.elements.users.value);
+      if (!plan) { estimateBox.hidden = true; return ""; }
+      estimateBox.hidden = false;
+      if (!Number.isInteger(users) || users < 1 || users > plan.maxUsers) {
+        const note = "This team size is outside " + plan.name + "’s standard range of 1–" + plan.maxUsers + " users. We’ll discuss a suitable plan or custom quote; no standard estimate is being confirmed.";
+        estimateBox.textContent = note;
+        return note;
+      }
+      const quote = pricing.estimate(plan.id, users);
+      const note = plan.name + " for " + users + (users === 1 ? " user: " : " users: ") + pricing.currency(quote.monthly) + "/month + " + pricing.currency(quote.setup) + " one-off setup. Indicative service estimate; domain, mailbox licences, other supplier fees and agreed additions are separate. Final scope and costs are confirmed before work starts.";
+      estimateBox.textContent = note;
+      return note;
+    }
+    form.elements.service.addEventListener("change", estimateSummary);
+    form.elements.users.addEventListener("input", estimateSummary);
+    estimateSummary();
     let briefUrl;
     form.addEventListener("submit", (event) => {
       event.preventDefault();
       if (!form.reportValidity()) return;
       const data = new FormData(form);
       const label = form.elements.service.selectedOptions[0].textContent;
-      const brief = `ULTIMATE2K — BUSINESS IT ENQUIRY\n\nName: ${data.get("name")}\nEmail: ${data.get("email")}\nCompany: ${data.get("company") || "Not specified"}\nIndustry: ${data.get("industry") || "Not specified"}\nPeople: ${data.get("users") || "Not specified"}\nInterest: ${label}\n\nREQUIREMENTS\n${data.get("message")}\n\nPrepared locally. Send this enquiry to info@ultimate2k.co.za.\n`;
+      const estimate = estimateSummary();
+      const brief = `ULTIMATE2K — BUSINESS IT ENQUIRY\n\nName: ${data.get("name")}\nEmail: ${data.get("email")}\nCompany: ${data.get("company") || "Not specified"}\nIndustry: ${data.get("industry") || "Not specified"}\nPeople: ${data.get("users") || "Not specified"}\nInterest: ${label}\n${estimate ? "Estimate: " + estimate + "\n" : ""}\nREQUIREMENTS\n${data.get("message")}\n\nPrepared locally. Send this enquiry to info@ultimate2k.co.za.\n`;
       form.querySelector(".brief-result")?.remove();
       if (briefUrl) URL.revokeObjectURL(briefUrl);
       briefUrl = URL.createObjectURL(
