@@ -60,9 +60,6 @@
   font-size: 12px;
   margin: 0 0 20px;
 }
-.footer-main > div:last-child > a {
-  color: var(--red) !important;
-}
 .comic-home .site-header nav > a[aria-current] {
   text-decoration: underline;
 }
