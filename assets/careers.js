@@ -5,9 +5,9 @@ application.addEventListener('submit', event => {
   const fields = new FormData(application);
   const sections = [
     ['Full name', 'name'], ['Email', 'email'], ['Phone', 'phone'],
-    ['LinkedIn or CV', 'profile'], ['1. Sales experience and clients', 'experience'],
-    ['2. Largest deal closed', 'deal'], ['3. Five organisations to approach', 'prospects'],
-    ['4. Commission-only experience', 'commission'],
+    ['LinkedIn or CV', 'profile'], ['1. Small-business sales experience', 'experience'],
+    ['2. Explaining the salon plan and scope', 'deal'], ['3. First target market and conversation', 'prospects'],
+    ['4. Outreach, availability and expectations', 'commission'],
   ];
   const body = sections.map(([label, name]) => `${label}:\r\n${fields.get(name).trim()}`).join('\r\n\r\n');
   const draft = document.querySelector('#application-draft');

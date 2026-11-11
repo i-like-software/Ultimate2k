@@ -1,51 +1,135 @@
 (() => {
-  const businesses = [
-    { name: "Copper Kettle Repairs", sector: "Local service / fictional", brief: "A mobile appliance repair team needs a simple website, a business inbox and a verified listing so customers can find its service area.", workspace: "Domain email only", options: ["listing"] },
-    { name: "Juniper Studio", sector: "Appointments / fictional", brief: "A small wellness studio needs a service menu, appointment booking and Google Workspace accounts for its team.", workspace: "Google Workspace", options: ["listing", "pages", "booking"] },
-    { name: "Harbour Supply Co.", sector: "Wholesale / fictional", brief: "A growing wholesaler needs a product catalogue, enquiry routing, a showroom listing and Microsoft 365 accounts.", workspace: "Microsoft 365", options: ["listing", "pages", "booking", "profiles", "catalogue", "automation"] }
-  ];
-  const options = [
-    { id: "listing", label: "Google Business Profile setup", price: 0, description: "Set up an eligible storefront or service area and guide the owner through verification." },
-    { id: "pages", label: "Additional website pages", price: 3500, description: "Dedicated service, about and contact pages." },
-    { id: "booking", label: "Booking and enquiry flow", price: 3000, description: "Connect a booking tool or build a structured enquiry form." },
-    { id: "profiles", label: "Business profile setup", price: 1800, description: "Set up agreed business accounts and add consistent branding." },
-    { id: "catalogue", label: "Product or service catalogue", price: 4500, description: "Build a browsable catalogue that routes enquiries to the team." },
-    { id: "automation", label: "Launch workflow automation", price: 3200, description: "Route enquiries, notify staff and track enquiries in one place." }
+  "use strict";
+  const pricing = window.Ultimate2kPricing;
+  if (!pricing) return;
+
+  const examples = [
+    {
+      name: "Juniper Beauty Studio",
+      sector: "Salon / fictional example",
+      plan: "micro",
+      users: 1,
+      brief:
+        "A solo salon owner needs a one-page service menu and appointment-request form. They maintain their own tools and want help if the hosted website has a fault.",
+      scope:
+        "Micro Launch supplies the template page, up to 5 sections and 10 listed services, a request form, domain connection, one revision and a 30-minute handover. The owner supplies content.",
+    },
+    {
+      name: "Cedar & Key Estates",
+      sector: "Estate agency / fictional example",
+      plan: "essential",
+      users: 4,
+      brief:
+        "Four agents need a small brochure website, business workspace administration and remote help with their primary computers.",
+      scope:
+        "Essential Launch supplies up to 5 template pages, one enquiry form, basic metadata/indexing setup and four new workspace accounts. Property-feed integrations and old email migration get a separate scope.",
+    },
+    {
+      name: "Northfield Independent Practice",
+      sector: "Independent practice / fictional example",
+      plan: "care",
+      users: 12,
+      brief:
+        "Twelve staff need business IT administration, device patch-status reviews and a public appointment-request website.",
+      scope:
+        "Care Onboarding covers the fixed launch scope plus the baseline access review, inventory and join/leave checklist. Two additional supported user/device pairs add R500. Forms collect public appointment requests without clinical patient details.",
+    },
+    {
+      name: "Signal House Advisory",
+      sector: "Service business / fictional example",
+      plan: "operations",
+      users: 18,
+      brief:
+        "An eighteen-person advisory team needs more support time and scheduled updates to an agreed enquiry-routing workflow.",
+      scope:
+        "Operations Onboarding includes up to 8 template pages, one existing supported workflow with up to 5 steps and a 90-minute handover. Eight additional supported user/device pairs add R2,000.",
+    },
   ];
   const business = document.querySelector("#starter-business");
-  const workspace = document.querySelector("#starter-workspace");
-  const optionList = document.querySelector("#starter-options");
-  const currency = amount => "R" + amount.toLocaleString("en-ZA").replace(/\s/g, ",");
+  const planField = document.querySelector("#starter-plan");
+  const usersField = document.querySelector("#starter-users");
+  const enquiry = document.querySelector("#starter-enquiry");
 
-  businesses.forEach((item, index) => business.add(new Option(item.name, index)));
-  options.forEach(item => {
-    const row = document.createElement("li");
-    row.innerHTML = `<label><input type="checkbox" value="${item.id}"><span>${item.label}<small>${item.description}</small></span><span class="lab-value">${item.price ? currency(item.price) : "Included"}</span></label>`;
-    optionList.append(row);
+  examples.forEach((example, index) =>
+    business.add(new Option(example.name, String(index))),
+  );
+  pricing.plans.forEach((plan) =>
+    planField.add(
+      new Option(
+        plan.name + " · " + pricing.currency(plan.fee) + "/user/month",
+        plan.id,
+      ),
+    ),
+  );
+
+  function updateEstimate() {
+    const plan = pricing.getPlan(planField.value);
+    usersField.max = String(plan.maxUsers);
+    const users = Number(usersField.value);
+    const valid =
+      usersField.value !== "" &&
+      Number.isInteger(users) &&
+      users >= 1 &&
+      users <= plan.maxUsers;
+    usersField.setAttribute("aria-invalid", String(!valid));
+    document.querySelector("#starter-user-help").textContent =
+      plan.id === "micro"
+        ? "Micro supports 1–5 named users in one business/site."
+        : "Managed plans support 1–50 named users on the standard cloud stack.";
+    document.querySelector("#starter-error").textContent = valid
+      ? ""
+      : "Enter a whole number from 1 to " + plan.maxUsers + ".";
+    enquiry.setAttribute("aria-disabled", String(!valid));
+    document.querySelector("#starter-plan-scope").textContent = plan.setupScope;
+    document.querySelector("#starter-plan-response").textContent =
+      plan.allowance
+        ? plan.allowance +
+          " assisted support minutes/user/month, pooled across the business with no rollover. First response target " +
+          plan.response +
+          " during staffed hours."
+        : "Hosted platform fault help and self-service guides. First response target 2 business days. Personal device/app support, website content edits and mailbox hosting are separately priced.";
+    if (!valid) {
+      document.querySelector("#starter-total").textContent = "—";
+      document.querySelector("#starter-monthly").textContent = "—";
+      enquiry.removeAttribute("href");
+      return;
+    }
+    const quote = pricing.estimate(plan.id, users);
+    document.querySelector("#starter-total").textContent = pricing.currency(
+      quote.setup,
+    );
+    document.querySelector("#starter-monthly").textContent = pricing.currency(
+      quote.monthly,
+    );
+    document.querySelector("#starter-setup-detail").textContent =
+      quote.additionalPairs
+        ? pricing.currency(plan.setup) +
+          " fixed setup + " +
+          quote.additionalPairs +
+          " additional supported user/device pairs at R250 each."
+        : plan.setupName + " within the stated fixed scope.";
+    enquiry.href = "contact.html?plan=" + plan.id + "&users=" + users;
+  }
+
+  function selectExample() {
+    const example = examples[Number(business.value)];
+    document.querySelector("#starter-sector").textContent = example.sector;
+    document.querySelector("#starter-name").textContent = example.name;
+    document.querySelector("#starter-brief").textContent = example.brief;
+    document.querySelector("#starter-example-scope").textContent =
+      example.scope;
+    planField.value = example.plan;
+    usersField.value = String(example.users);
+    updateEstimate();
+  }
+
+  business.addEventListener("change", selectExample);
+  usersField.addEventListener("input", updateEstimate);
+  planField.addEventListener("change", () => {
+    const maxUsers = pricing.getPlan(planField.value).maxUsers;
+    if (Number(usersField.value) > maxUsers)
+      usersField.value = String(maxUsers);
+    updateEstimate();
   });
-
-  function updateQuote() {
-    const checked = new Set([...optionList.querySelectorAll("input:checked")].map(input => input.value));
-    const total = 4000 + options.filter(item => checked.has(item.id)).reduce((sum, item) => sum + item.price, 0);
-    document.querySelector("#starter-total").textContent = currency(total);
-    document.querySelector("#starter-retainer").textContent = currency(total / 10);
-    document.querySelector("#starter-workspace-note").textContent = workspace.value === "Domain email only"
-      ? "Set up mailboxes on your domain and configure email delivery."
-      : `Set up ${workspace.value} business accounts and connect your domain. Licences are billed separately.`;
-  }
-
-  function selectBusiness() {
-    const selected = businesses[Number(business.value)];
-    document.querySelector("#starter-sector").textContent = selected.sector;
-    document.querySelector("#starter-name").textContent = selected.name;
-    document.querySelector("#starter-brief").textContent = selected.brief;
-    workspace.value = selected.workspace;
-    optionList.querySelectorAll("input").forEach(input => { input.checked = selected.options.includes(input.value); });
-    updateQuote();
-  }
-
-  business.addEventListener("change", selectBusiness);
-  workspace.addEventListener("change", updateQuote);
-  optionList.addEventListener("change", updateQuote);
-  selectBusiness();
+  selectExample();
 })();

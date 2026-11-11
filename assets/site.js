@@ -96,20 +96,37 @@
   );
   const form = document.querySelector("#brief-form");
   if (form) {
-    const chosen = new URLSearchParams(location.search).get("service");
+    const params = new URLSearchParams(location.search);
+    const chosen = params.get("plan") || params.get("service");
     if (
       [...form.elements.service.options].some(
         (option) => option.value === chosen,
       )
     )
       form.elements.service.value = chosen;
+    if (form.elements.users) {
+      const users = Number(params.get("users"));
+      if (Number.isInteger(users) && users >= 1 && users <= 500) {
+        form.elements.users.value = String(users);
+      }
+    }
+    if (form.elements.industry) {
+      const industries = {
+        salons: "Salon or beauty business",
+        "estate-agencies": "Estate agency",
+        practices: "Independent practice",
+        "service-businesses": "Other service business",
+      };
+      const industry = industries[params.get("industry")];
+      if (industry) form.elements.industry.value = industry;
+    }
     let briefUrl;
     form.addEventListener("submit", (event) => {
       event.preventDefault();
       if (!form.reportValidity()) return;
       const data = new FormData(form);
       const label = form.elements.service.selectedOptions[0].textContent;
-      const brief = `ULTIMATE2K — PROJECT BRIEF\n\nName: ${data.get("name")}\nEmail: ${data.get("email")}\nCompany: ${data.get("company") || "Not specified"}\nService: ${label}\n\nPROJECT\n${data.get("message")}\n\nGenerated locally. This brief has not been sent.\n`;
+      const brief = `ULTIMATE2K — BUSINESS IT ENQUIRY\n\nName: ${data.get("name")}\nEmail: ${data.get("email")}\nCompany: ${data.get("company") || "Not specified"}\nIndustry: ${data.get("industry") || "Not specified"}\nPeople: ${data.get("users") || "Not specified"}\nInterest: ${label}\n\nREQUIREMENTS\n${data.get("message")}\n\nPrepared locally. Send this enquiry to info@ultimate2k.co.za.\n`;
       form.querySelector(".brief-result")?.remove();
       if (briefUrl) URL.revokeObjectURL(briefUrl);
       briefUrl = URL.createObjectURL(
@@ -118,7 +135,7 @@
       const result = document.createElement("div");
       result.className = "brief-result";
       const outputLabel = document.createElement("label");
-      outputLabel.textContent = "Your project brief";
+      outputLabel.textContent = "Your enquiry draft";
       const output = document.createElement("textarea");
       output.readOnly = true;
       output.rows = 10;
@@ -143,10 +160,14 @@
           copy.textContent = "Selected — use your copy shortcut";
         }
       });
-      result.append(outputLabel, download, copy);
+      const email = document.createElement("a");
+      email.className = "button";
+      email.textContent = "Open email app ↗";
+      email.href = `mailto:info@ultimate2k.co.za?subject=Ultimate2k%20business%20IT%20enquiry&body=${encodeURIComponent(brief)}`;
+      result.append(outputLabel, email, download, copy);
       form.append(result);
       form.querySelector(".form-status").textContent =
-        "Your brief is ready below. Download or copy it for your conversation with Ultimate2k. Nothing has been sent.";
+        "Your enquiry is ready. Open your email app to send it, or copy the draft into webmail addressed to info@ultimate2k.co.za.";
       output.focus();
     });
   }
