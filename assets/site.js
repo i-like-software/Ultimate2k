@@ -191,8 +191,8 @@
       result.append(outputLabel, email, download, copy);
       form.append(result);
       form.querySelector(".form-status").textContent =
-        "Your enquiry is ready. Open your email app to send it, or copy the draft into webmail addressed to info@ultimate2k.co.za.";
-      output.focus();
+        "Opening your email app. Review the enquiry and press Send there. If nothing opens, use Open email app or copy the draft into webmail addressed to info@ultimate2k.co.za. This website has not sent your enquiry.";
+      email.click();
     });
   }
 })();
