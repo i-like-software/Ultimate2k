@@ -1,0 +1,256 @@
+/* Keep the inked panels and crimson accents, with cooler technical details. */
+.comic {
+  --circuit: #08798a;
+  --circuit-bright: #8beaf3;
+  --circuit-dark: #11191f;
+}
+
+.comic .site-header {
+  border-image: linear-gradient(90deg, var(--red), var(--ink) 28%, var(--ink) 72%, var(--circuit)) 1;
+}
+
+.comic .site-header a:focus-visible,
+.comic .button:focus-visible,
+.comic .text-link:focus-visible {
+  outline: 3px solid var(--circuit);
+  outline-offset: 5px;
+}
+
+.comic .eyebrow {
+  letter-spacing: 0.12em;
+}
+
+.comic .page-intro {
+  position: relative;
+  isolation: isolate;
+}
+
+.comic .page-intro::after {
+  position: absolute;
+  z-index: -1;
+  inset: 0 0 0 32%;
+  background:
+    repeating-linear-gradient(0deg, #08798a15 0 1px, transparent 1px 26px),
+    repeating-linear-gradient(90deg, #08798a15 0 1px, transparent 1px 26px);
+  mask-image: linear-gradient(90deg, transparent, black);
+  content: "";
+  pointer-events: none;
+}
+
+.comic .service-row,
+.comic .founders-panel {
+  background-color: #f7fbfc;
+  box-shadow: 5px 5px 0 var(--ink);
+}
+
+.comic .service-row:hover,
+.comic .service-row:focus-visible {
+  border-color: var(--circuit);
+  box-shadow: 5px 5px 0 var(--circuit);
+}
+
+.comic .service-chapter {
+  border-top-color: var(--circuit-dark);
+}
+
+.comic .service-chapter .eyebrow,
+.comic .scope-note {
+  box-shadow: 4px 4px 0 var(--circuit);
+}
+
+.comic .site-footer {
+  border-top: 3px solid var(--circuit);
+}
+
+.comic-home .site-header {
+  border-image: none;
+  border-bottom-color: #95eaf35c;
+  background: linear-gradient(180deg, #080e15ee, #080e1599);
+}
+
+.comic-home .site-header nav > a:focus-visible,
+.comic-home .landing-actions a:focus-visible,
+.comic-home .landing-bottom a:focus-visible {
+  outline: 3px solid var(--circuit-bright);
+  outline-offset: 6px;
+}
+
+.tech-wall {
+  position: absolute;
+  z-index: -3;
+  inset: -4px -18px;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-template-rows: repeat(5, minmax(0, 1fr));
+  gap: 5px;
+  background: #060c11;
+  pointer-events: none;
+}
+
+.tech-tile {
+  --tile-accent: #6adbe9;
+  position: relative;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  justify-items: center;
+  align-items: center;
+  min-width: 0;
+  padding: 14px 5px 8px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 65% 35%, #263c4b, transparent 69%),
+    repeating-linear-gradient(135deg, transparent 0 11px, #101923 11px 12px),
+    #14232d;
+  border: 1px solid #395568;
+  border-top-color: var(--tile-accent);
+  box-shadow: inset 0 -3px 0 #0a1218, 2px 2px 0 #05080c;
+}
+
+.tech-tile:nth-child(3n + 1) {
+  --tile-accent: #f45b7d;
+  background-color: #2a1b2a;
+}
+
+.tech-tile:nth-child(7n + 3) {
+  --tile-accent: #b3a5fc;
+}
+
+.tech-tile::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 19px;
+  height: 6px;
+  background: var(--tile-accent);
+  clip-path: polygon(0 0, 100% 0, 65% 100%, 0 100%);
+  content: "";
+}
+
+.tech-tile::after {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  color: var(--tile-accent);
+  content: attr(data-slot);
+  font: 700 8px/1 monospace;
+}
+
+.tech-mark {
+  display: grid;
+  place-items: center;
+  width: min(67%, 72px);
+  aspect-ratio: 1;
+  padding: 12%;
+  background: #edf4f8;
+  border: 2px solid #0a1218;
+  border-radius: 12px 2px 12px 2px;
+  box-shadow: 3px 3px 0 #080c10, 0 0 13px #9dd9f23b;
+}
+
+.tech-mark svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.tech-label {
+  max-width: 100%;
+  color: #edf7ff;
+  overflow: hidden;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: clamp(10px, 1vw, 16px);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: 0.035em;
+  text-transform: uppercase;
+}
+
+.comic-landing {
+  background: #080e15;
+}
+
+.comic-landing .landing-vignette {
+  background:
+    radial-gradient(ellipse at 50% 48%, #080e15f2 8%, #080e15dc 25%, #080e15a3 45%, #080e1524 77%),
+    linear-gradient(180deg, #080e15a3, transparent 30%, transparent 72%, #080e15d6),
+    repeating-linear-gradient(0deg, #080e1530 0 1px, transparent 1px 4px);
+}
+
+.comic-landing .landing-caption {
+  color: #d8faff;
+  background: #152a36;
+  border-color: var(--circuit-bright);
+  box-shadow: 4px 4px 0 #080c12, 0 0 24px #8beaf333;
+  transform: none;
+}
+
+.comic-landing h1 > strong {
+  border-color: #f56080;
+  background: linear-gradient(100deg, #b90338, #930126);
+  box-shadow: 7px 7px 0 #080c12, 0 0 28px #f9336973;
+}
+
+.comic-landing .landing-description {
+  color: #e9f8fc;
+  text-shadow: 0 1px 5px #080c12;
+}
+
+.comic-landing .landing-bottom > a > span {
+  border-color: var(--circuit-bright);
+  box-shadow: 0 0 14px #8beaf370;
+}
+
+@media (max-width: 1100px) {
+  .tech-wall {
+    grid-template-columns: repeat(10, minmax(0, 1fr));
+    grid-template-rows: repeat(6, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 800px) {
+  .comic-home .site-header nav.open {
+    background: #f7fbfc;
+  }
+
+  .comic-home .site-header nav.open a:focus-visible {
+    outline-color: var(--circuit);
+  }
+
+  .tech-wall {
+    inset-inline: -10px;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-template-rows: repeat(10, minmax(0, 1fr));
+  }
+
+  .tech-tile {
+    padding-top: 10px;
+    padding-bottom: 5px;
+  }
+
+  .tech-mark {
+    width: min(64%, 48px);
+    padding: 9%;
+    border-radius: 7px 1px 7px 1px;
+  }
+
+  .tech-tile::after {
+    top: 4px;
+    right: 4px;
+    font-size: 6px;
+  }
+}
+
+@media (max-width: 430px) {
+  .tech-wall {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-rows: repeat(12, minmax(0, 1fr));
+    gap: 3px;
+  }
+
+  .tech-label {
+    font-size: 9px;
+  }
+}

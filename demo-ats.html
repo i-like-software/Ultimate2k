@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Applicant Tracking System Demo | Ultimate2k</title>
+<meta name="description" content="Try filtering fictional applicants, shortlisting candidates and moving them through a configurable hiring pipeline.">
+<meta name="theme-color" content="#ba0033">
+<link rel="canonical" href="https://ultimate2k.co.za/demo-ats">
+<link rel="icon" href="assets/icons/icon-192.png" sizes="192x192" type="image/png">
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="assets/comic-refinement.css">
+<link rel="stylesheet" href="assets/current.css">
+<link rel="stylesheet" href="assets/team.css">
+    <link rel="stylesheet" href="assets/business.css">
+<link rel="stylesheet" href="assets/solutions.css">
+<script src="assets/site.js" defer></script>
+<script src="assets/demo-ats.js" defer></script>
+
+
+<link rel="stylesheet" href="assets/ux.css">
+<meta name="robots" content="noindex,follow">
+<link rel="stylesheet" href="assets/cinema.css">
+<link rel="stylesheet" href="assets/page-presentation.css">
+<link rel="stylesheet" href="assets/pricing-presentation.css">
+<link rel="stylesheet" href="assets/presentation-motion.css">
+<script src="assets/presentation-motion.js" defer></script>
+<link rel="stylesheet" href="assets/brand-cohesion.css">
+<link rel="stylesheet" href="assets/scroll-cue.css">
+<link rel="stylesheet" href="assets/campaign-tracking.css">
+<script src="assets/analytics-config.js" defer></script>
+<script src="assets/campaign-tracking.js" defer></script>
+</head>
+<body class="comic solutions-page" id="top">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+<a class="brand" href="index.html" aria-label="Ultimate2k home"><img src="assets/brand/u2k-logo.svg" alt=""><span class="brand-name">ultimate<span>2k</span></span></a>
+<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu <span aria-hidden="true">☰</span></button>
+<nav id="site-nav" aria-label="Main navigation"><a href="index.html">Home</a>
+<a href="services.html">Services</a>
+<a href="pricing.html">Pricing</a>
+
+<a href="contact.html" class="nav-contact">Start a project<span aria-hidden="true">↗</span></a></nav>
+</header>
+<main id="main" class="container lab-main"><p class="container ux-archive-notice">These demonstrations are not part of our current service guide. <a href="services.html">View our services →</a></p>
+<p></p>
+<header class="lab-head"><p class="lab-kicker">03 / Interactive demo</p><h1>Applicant Tracking System</h1><p>Choose a fictional employer, filter the applicant queue and move candidates through an interview pipeline. Every stage change is a reviewer decision.</p><a class="scroll-cue scroll-cue-on-paper" href="#page-content" aria-label="Scroll down to page content"><span class="scroll-cue-line" aria-hidden="true"></span><span class="scroll-cue-mouse" aria-hidden="true"><span class="scroll-cue-wheel"></span></span><span class="scroll-cue-label">Scroll<br>down</span></a></header><div id="page-content" class="scroll-content-target" tabindex="-1"></div>
+<section class="lab-frame" aria-label="Applicant tracking workspace">
+<header class="lab-frame-header"><strong>Hiring workspace</strong><label>Example employer <select id="ats-business" class="lab-input"></select></label></header>
+<div class="lab-body lab-layout">
+  <div class="lab-stack">
+    <article class="lab-card">
+      <h2 id="ats-job"></h2>
+      <div id="ats-metrics" class="lab-metrics"></div>
+      <h3>Review criteria</h3>
+      <p class="lab-muted">Criteria filter this view. The full applicant list remains available.</p>
+      <div class="lab-controls">
+        <label>Search candidates <input type="search" class="lab-input" id="ats-search" placeholder="Name or skill"></label>
+        <label>Pipeline stage <select class="lab-input" id="ats-stage"></select></label>
+        <label>Required skill <select class="lab-input" id="ats-skill"></select></label>
+        <label>Relevant experience <select class="lab-input" id="ats-experience"></select></label>
+      </div>
+      <p id="ats-result-count" aria-live="polite" class="lab-muted"></p>
+      <div class="lab-table-wrap">
+        <table class="lab-table">
+          <thead><tr><th scope="col">Applicant</th><th scope="col">Experience</th><th scope="col">Stage</th></tr></thead>
+          <tbody id="ats-list"></tbody>
+        </table>
+      </div>
+    </article>
+    <article class="lab-card" id="ats-profile" aria-labelledby="ats-profile-title">
+      <h3 id="ats-profile-title" tabindex="-1">Applicant details</h3>
+      <div id="ats-profile-content"></div>
+      <p id="ats-status" class="lab-status" role="status"></p>
+    </article>
+  </div>
+  <aside class="lab-card" id="ats-scope"></aside>
+</div>
+</section>
+<p class="lab-muted">Illustrative scenario. Prices and scope are examples, and any project would receive a custom quote.</p><noscript><p>Enable JavaScript to explore this interactive demo.</p></noscript>
+</main>
+<footer class="footer">
+      <div class="footer-main container">
+        <div><a class="brand" href="index.html" aria-label="Ultimate2k home"><img src="assets/brand/u2k-logo.svg" alt=""><span class="brand-name">ultimate<span>2k</span></span></a><p class="company-name">Ultimate2k (Pty) Ltd.<br>Business IT setup, support and custom software.<br>South Africa · Remote delivery</p><a href="mailto:info@ultimate2k.co.za">info@ultimate2k.co.za</a></div>
+        <div><h3>Explore</h3><a href="pricing.html">Plans and coverage</a><a href="industries.html">Your industry</a><a href="services.html">Services</a></div>
+        <div><h3>Company</h3><a href="about.html">About Ultimate2k</a><a href="careers.html">Careers</a><a href="contact.html">Get started</a><a href="privacy.html">Privacy</a></div>
+      </div>
+      <div class="footer-bottom container"><span>© 2026 Ultimate2k (Pty) Ltd.</span><a href="#top">Back to top ↑</a><button class="motion-toggle" type="button" aria-pressed="false">Pause motion</button></div></footer>
+
+</body>
+</html>
+
+

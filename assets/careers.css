@@ -1,0 +1,54 @@
+.application-layout {
+  max-width: 800px;
+  margin-inline: auto;
+}
+
+.application-heading {
+  margin-bottom: 28px;
+}
+
+.application-heading > p:last-child {
+  margin-top: 16px;
+}
+
+#sales-application {
+  padding: clamp(18px, 4vw, 36px);
+  border: 2px solid var(--ink);
+  box-shadow: 5px 5px 0 var(--red);
+}
+
+#sales-application .form-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px 20px;
+  padding-bottom: 24px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid #ddd;
+}
+
+#sales-application .form-grid label {
+  margin-bottom: 0;
+}
+
+#sales-application label {
+  font-size: 14px;
+}
+
+#sales-application input,
+#sales-application textarea {
+  border: 1px solid #999;
+}
+
+#sales-application .button {
+  width: auto;
+  max-width: 100%;
+}
+
+.application-alternative {
+  margin-top: 24px;
+}
+
+@media (max-width: 600px) {
+  #sales-application .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
